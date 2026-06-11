@@ -5,7 +5,7 @@ export default function CategoriesPage() {
     return (
         <div>
             <CategoriesHero />
-            <CategoriesList />
+            {/* <CategoriesList /> */}
         </div>
     )
 }
