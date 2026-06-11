@@ -1,6 +1,6 @@
 "use client";
 
-const LOGOS = ["MAERSK", "MSC", "CMA CGM", "ONE", "HAPAG", "EVERGREEN", "COSCO", "PIL"];
+const LOGOS = ["Man", "Wartsila", "Yanmar", "Daihatsu", "Mitsubishi", "Sulzer", "Bergen"];
 
 export default function ClientsSection() {
     return (

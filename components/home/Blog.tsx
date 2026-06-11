@@ -41,7 +41,7 @@ export default function HomeBlogsSection() {
                     <div className="lg:sticky lg:top-32 h-fit">
 
                         <p className="text-neutral-500 text-xl mb-6">
-                            Latest News
+                            Latest Blogs
                         </p>
 
                         <h2 className="text-5xl lg:text-7xl font-bold leading-[0.95]">

@@ -31,7 +31,7 @@ export default function StatsSection() {
 
                         <div>
                             <h3 className="text-[clamp(80px,10vw,120px)] font-bold leading-none tracking-tight">
-                                14<sup className="text-[0.45em] align-super">+</sup>
+                                30<sup className="text-[0.45em] align-super">+</sup>
                             </h3>
                             <p className="mt-2 text-2xl text-neutral-500">
                                 Years of Experience
