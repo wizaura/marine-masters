@@ -40,10 +40,13 @@ export default function FindPartsModal({
             setLoadingParts(true);
 
             try {
-                const data =
-                    await getPartTypesByEngineModel(
-                        selectedModel.slug.current
+                const response =
+                    await fetch(
+                        `/api/part-types?modelSlug=${selectedModel.slug.current}`
                     );
+
+                const data =
+                    await response.json();
 
                 setPartTypes(data);
             } finally {
