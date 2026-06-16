@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getModelsByBrand } from "@/sanity/lib/getModelsByBrand";
+
+import { getPartTypesByEngineModel } from "@/sanity/lib/getPartTypesByEngineModel";
 
 export async function GET(
     request: Request
@@ -7,13 +8,26 @@ export async function GET(
     const { searchParams } =
         new URL(request.url);
 
-    const brandId =
-        searchParams.get("brandId");
+    const modelSlug =
+        searchParams.get("modelSlug");
 
-    const models =
-        await getModelsByBrand(
-            brandId!
+    if (!modelSlug) {
+        return NextResponse.json(
+            {
+                error: "Model slug required",
+            },
+            {
+                status: 400,
+            }
+        );
+    }
+
+    const partTypes =
+        await getPartTypesByEngineModel(
+            modelSlug
         );
 
-    return NextResponse.json(models);
+    return NextResponse.json(
+        partTypes
+    );
 }
