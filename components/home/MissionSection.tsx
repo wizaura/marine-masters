@@ -6,15 +6,15 @@ export default function MissionSection() {
             className="
                 relative
                 z-30
-                bg-[#f3f3f3]
+                bg-white
             "
         >
             {/* Top cap that hides hero */}
-            <div className="absolute -top-12 left-0 h-12 w-full bg-[#f3f3f3]" />
+            <div className="absolute -top-12 left-0 h-12 w-full bg-white" />
 
             <div className="mx-auto max-w-8xl px-8 pt-20 pb-20">
 
-                <div className="grid gap-12 lg:grid-cols-[0.6fr_1.4fr]">
+                <div className="grid gap-12 md:grid-cols-[0.6fr_1.4fr]">
 
                     {/* Left */}
                     <div>

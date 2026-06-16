@@ -1,14 +1,14 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "partCategory",
-  title: "Part Category",
+  name: "machineryModel",
+  title: "Machinery Model",
   type: "document",
 
   fields: [
     defineField({
-      name: "title",
-      title: "Title",
+      name: "name",
+      title: "Model Name",
       type: "string",
     }),
 
@@ -17,8 +17,15 @@ export default defineType({
       title: "Slug",
       type: "slug",
       options: {
-        source: "title",
+        source: "name",
       },
+    }),
+
+    defineField({
+      name: "brand",
+      title: "Brand",
+      type: "reference",
+      to: [{ type: "machineryBrand" }],
     }),
   ],
 });

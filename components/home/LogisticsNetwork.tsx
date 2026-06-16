@@ -4,7 +4,17 @@ import SectionNotch from "../ui/SectionNotch";
 
 export default function LogisticsNetworkSection() {
     return (
-        <section className="px-4 py-24 bg-[#f3f3f3]">
+        <section
+            className="
+        px-4
+        pt-12
+        pb-20
+        bg-gradient-to-b
+        from-[#f3f3f3]
+        via-[#fafafa]
+        to-white
+    "
+        >
             <div
                 className="
                     relative

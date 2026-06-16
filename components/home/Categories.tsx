@@ -20,11 +20,11 @@ const categories = [
 
 export default function HomeCategories() {
     return (
-        <section className="bg-[#f3f3f3] px-6 pt-20">
+        <section className="bg-[#f3f3f3] px-8 pt-20 pb-12">
             <div className="mx-auto max-w-8xl">
 
                 {/* Heading */}
-                <div className="mb-20 grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
+                <div className="mb-20 grid gap-10 md:grid-cols-[0.6fr_1.4fr]">
 
                     <div>
                         <p
@@ -153,7 +153,7 @@ export default function HomeCategories() {
                                         group-hover:translate-x-0
                                     "
                                 >
-                                    <SideNotch color="#ffffff" />
+                                    <SideNotch color="#f3f3f3" />
                                 </div>
 
                             </article>

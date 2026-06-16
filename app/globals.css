@@ -1,42 +1,26 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-}
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
- 
+
 .freight-marquee {
   display: flex;
   width: max-content;
   animation: marquee 18s linear infinite;
 }
- 
+
 /* ── Clients logo marquee ── */
 @keyframes clients-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
- 
+
 .clients-marquee {
   display: flex;
   width: max-content;
   animation: clients-scroll 22s linear infinite;
-}
- 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .freight-marquee,
-  .clients-marquee {
-    animation: none;
-  }
 }

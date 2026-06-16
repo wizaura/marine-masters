@@ -1,9 +1,9 @@
+import CTA from "../ui/CTA";
 import HomeBlogsSection from "./Blog";
-import HomeCTA from "./CTA";
 
 export default function HomeInsights() {
     return (
-        <section className="relative bg-[#f3f3f3]">
+        <section className="relative bg-white">
 
 
             {/* Blog Covers CTA */}
@@ -13,7 +13,7 @@ export default function HomeInsights() {
 
             {/* CTA Behind */}
             <div className="sticky bottom-0 mx-4">
-                <HomeCTA />
+                <CTA />
             </div>
 
         </section>

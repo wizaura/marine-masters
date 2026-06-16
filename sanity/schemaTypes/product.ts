@@ -8,15 +8,9 @@ export default defineType({
   fields: [
     defineField({
       name: "title",
-      title: "Product Name",
+      title: "Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
-    }),
-
-    defineField({
-      name: "partNumber",
-      title: "Part Number",
-      type: "string",
+      validation: Rule => Rule.required(),
     }),
 
     defineField({
@@ -25,6 +19,7 @@ export default defineType({
       type: "slug",
       options: {
         source: "title",
+        isUnique: async () => true,
       },
     }),
 
@@ -36,37 +31,70 @@ export default defineType({
     }),
 
     defineField({
-      name: "brand",
-      title: "Brand",
+      name: "engineModel",
+      title: "Engine Model",
       type: "reference",
-      to: [{ type: "brand" }],
+      to: [{ type: "engineModel" }],
     }),
 
     defineField({
-      name: "model",
-      title: "Model",
+      name: "partType",
+      title: "Part Type",
       type: "reference",
-      to: [{ type: "model" }],
+      to: [{ type: "partType" }],
     }),
 
     defineField({
-      name: "partCategory",
-      title: "Part Category",
+      name: "machineryType",
+      title: "Machinery Type",
       type: "reference",
-      to: [{ type: "partCategory" }],
+      to: [{ type: "machineryType" }],
     }),
 
     defineField({
-      name: "images",
-      title: "Images",
-      type: "array",
-      of: [{ type: "image" }],
+      name: "machineryBrand",
+      title: "Machinery Brand",
+      type: "reference",
+      to: [{ type: "machineryBrand" }],
+    }),
+
+    defineField({
+      name: "machineryModel",
+      title: "Machinery Model",
+      type: "reference",
+      to: [{ type: "machineryModel" }],
+    }),
+
+    defineField({
+      name: "condition",
+      title: "Condition",
+      type: "string",
+      options: {
+        list: [
+          { title: "Genuine", value: "genuine" },
+          { title: "Reconditioned", value: "reconditioned" },
+          { title: "Genuine & Reconditioned", value: "both" },
+        ],
+      },
+    }),
+
+    defineField({
+      name: "shortDescription",
+      title: "Short Description",
+      type: "text",
     }),
 
     defineField({
       name: "description",
       title: "Description",
-      type: "text",
+      type: "array",
+      of: [{ type: "block" }],
+    }),
+
+    defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
     }),
   ],
 });

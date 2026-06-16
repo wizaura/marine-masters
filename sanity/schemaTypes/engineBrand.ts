@@ -1,15 +1,16 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "model",
-  title: "Engine Model",
+  name: "engineBrand",
+  title: "Engine Brand",
   type: "document",
 
   fields: [
     defineField({
       name: "name",
-      title: "Model Name",
+      title: "Brand Name",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -22,10 +23,15 @@ export default defineType({
     }),
 
     defineField({
-      name: "brand",
-      title: "Brand",
-      type: "reference",
-      to: [{ type: "brand" }],
+      name: "logo",
+      title: "Logo",
+      type: "image",
+    }),
+
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
     }),
   ],
 });

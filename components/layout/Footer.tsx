@@ -88,7 +88,7 @@ export default function Footer() {
                             hover:text-white
                         "
                     >
-                        News
+                        Blogs
                     </Link>
 
                     <Link

@@ -1,11 +1,9 @@
-import CategoriesHero from "@/components/categories/Hero";
-import CategoriesList from "@/components/categories/List";
+import Hero from "@/components/categories/Hero";
 
 export default function CategoriesPage() {
     return (
         <div>
-            <CategoriesHero />
-            {/* <CategoriesList /> */}
+            <Hero />
         </div>
     )
 }

@@ -6,7 +6,7 @@ type SectionNotchProps = {
 };
 
 export default function SectionNotch({
-    color = "#f3f3f3",
+    color = "#fff",
     showArrow = true,
 }: SectionNotchProps) {
     return (

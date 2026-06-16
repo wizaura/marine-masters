@@ -12,7 +12,7 @@ export default function PublicLayout({
     <>
       <Navbar />
 
-      <main>
+      <main className="bg-white">
         {children}
       </main>
       <Footer />

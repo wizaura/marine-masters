@@ -4,15 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(
-        window.scrollY >= window.innerHeight - 50
+        window.scrollY >= window.innerHeight / 2
       );
     };
 
@@ -38,11 +40,35 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const links = [
-    "Home",
-    "About",
-    "News",
-    "Categories",
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
+      label: "Blogs",
+      href: "/blogs",
+    },
+    {
+      label: "Categories",
+      href: "/categories",
+    },
   ];
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    if (href === "/categories") {
+      return pathname.startsWith("/categories");
+    }
+
+    return pathname === href;
+  };
 
   return (
     <>
@@ -77,25 +103,25 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {links.map((item) => (
                 <Link
-                  key={item}
-                  href={
-                    item === "Home"
-                      ? "/"
-                      : `/${item.toLowerCase()}`
-                  }
+                  key={item.label}
+                  href={item.href}
                   className={`
-                    rounded-full
-                    px-6
-                    py-3
-                    font-semibold
-                    transition
-                    ${scrolled
-                      ? "bg-neutral-100 text-black hover:bg-neutral-200"
-                      : "bg-white/20 text-white backdrop-blur-md hover:bg-white/30"
+            rounded-full
+            px-6
+            py-3
+            font-semibold
+            transition
+            ${isActive(item.href)
+                      ? scrolled
+                        ? "bg-orange-400 text-white"
+                        : "bg-white text-black"
+                      : scrolled
+                        ? "bg-neutral-100 text-black hover:bg-neutral-200"
+                        : "bg-white/20 text-white backdrop-blur-md hover:bg-white/30"
                     }
-                  `}
+        `}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -236,25 +262,25 @@ export default function Navbar() {
           <div className="flex flex-1 flex-col justify-center px-8">
             {links.map((item) => (
               <Link
-                key={item}
-                href={
-                  item === "Home"
-                    ? "/"
-                    : `/${item.toLowerCase()}`
-                }
+                key={item.label}
+                href={item.href}
                 onClick={() =>
                   setMobileOpen(false)
                 }
-                className="
-                  border-b
-                  border-white/10
-                  py-7
-                  text-4xl
-                  font-bold
-                  text-white
-                "
+                className={`
+            border-b
+            border-white/10
+            py-7
+            text-4xl
+            font-bold
+            transition
+            ${isActive(item.href)
+                    ? "text-orange-400"
+                    : "text-white"
+                  }
+        `}
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>

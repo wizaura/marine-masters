@@ -4,6 +4,7 @@ export default defineType({
     name: "category",
     title: "Category",
     type: "document",
+
     fields: [
         defineField({
             name: "title",
@@ -11,6 +12,7 @@ export default defineType({
             type: "string",
             validation: (Rule) => Rule.required(),
         }),
+
         defineField({
             name: "slug",
             title: "Slug",
@@ -19,24 +21,47 @@ export default defineType({
                 source: "title",
             },
         }),
+
         defineField({
             name: "image",
-            title: "Category Image",
+            title: "Image",
             type: "image",
-            options: {
-                hotspot: true,
-            },
         }),
+
         defineField({
             name: "description",
             title: "Description",
             type: "text",
         }),
+
+        defineField({
+            name: "heroTitle",
+            title: "Hero Title",
+            type: "string",
+        }),
+
+        defineField({
+            name: "heroDescription",
+            title: "Hero Description",
+            type: "text",
+        }),
+
+        defineField({
+            name: "heroImage",
+            title: "Hero Image",
+            type: "image",
+        }),
+
+        defineField({
+            name: "introTitle",
+            title: "Intro Title",
+            type: "string",
+        }),
+
+        defineField({
+            name: "introDescription",
+            title: "Intro Description",
+            type: "text",
+        }),
     ],
-    preview: {
-        select: {
-            title: "title",
-            media: "image",
-        },
-    },
-}); 
+});
