@@ -30,10 +30,11 @@ export default function EngineBrandsGrid({ brands, slug }: { brands: any[], slug
             setLoading(true);
 
             try {
-                const data =
-                    await getModelsByBrand(
-                        selectedBrand._id
-                    );
+                const res = await fetch(
+                    `/api/models?brandId=${selectedBrand._id}`
+                );
+
+                const data = await res.json();
 
                 setModels(data);
             } finally {
