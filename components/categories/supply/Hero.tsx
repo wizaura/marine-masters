@@ -4,15 +4,18 @@ export default function ShipSupplyHero() {
             <div className="relative h-[75vh] overflow-hidden rounded-[48px]">
 
                 <img
-                    src="/ship-supply-hero.jpg"
+                    src="/hero-2.avif"
                     alt="Ship Supply"
                     className="
-                        absolute
-                        inset-0
-                        h-full
-                        w-full
-                        object-cover
-                    "
+        absolute
+        inset-0
+        h-full
+        w-full
+        object-cover
+    "
+                    style={{
+                        objectPosition: "50% 80%",
+                    }}
                 />
 
                 <div className="absolute inset-0 bg-black/45" />

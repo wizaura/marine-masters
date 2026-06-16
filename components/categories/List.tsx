@@ -169,7 +169,7 @@ export default async function CategoriesList() {
         "
             >
               <img
-                src={"/placeholder.jpg"}
+                src={"/hero-2.avif"}
                 alt="supply-image"
                 className="
                 absolute
@@ -236,7 +236,7 @@ export default async function CategoriesList() {
                         lg:text-4xl
                     "
                   >
-                   Category Supply
+                   Our Supply
                   </h3>
 
                   <p
@@ -247,7 +247,7 @@ export default async function CategoriesList() {
                         text-white/80
                     "
                   >
-                    All Categories we supply
+                    All parts and brands we supply
                   </p>
                 </div>
               </div>

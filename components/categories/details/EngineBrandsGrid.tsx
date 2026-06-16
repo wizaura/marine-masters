@@ -47,7 +47,7 @@ export default function EngineBrandsGrid({ brands, slug }: { brands: any[], slug
 
     return (
         <>
-            <section className="pb-24">
+            <section className="pb-24 px-8">
                 <div className="mx-auto max-w-8xl">
 
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
