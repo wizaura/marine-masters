@@ -36,10 +36,13 @@ export default function MachineryBrandsGrid({
             setLoadingModels(true);
 
             try {
-                const data =
-                    await getMachineryModelsByBrand(
-                        selectedBrand._id
+                const response =
+                    await fetch(
+                        `/api/machinery-models?brandId=${selectedBrand._id}`
                     );
+
+                const data =
+                    await response.json();
 
                 setModels(data);
             } finally {
