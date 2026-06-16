@@ -164,9 +164,47 @@ export default function ContactRFQSection() {
                                 pricing, lead time, and shipping options.
                             </p>
 
+                            <div className="mt-8 flex flex-wrap gap-3">
+
+                                <div
+                                    className="
+            rounded-full
+            border
+            border-white/10
+            bg-white/5
+            px-4
+            py-2
+            text-sm
+            text-white/80
+        "
+                                >
+                                    ✓ Genuine & OEM Parts
+                                </div>
+
+                                <div
+                                    className="
+            rounded-full
+            border
+            border-white/10
+            bg-white/5
+            px-4
+            py-2
+            text-sm
+            text-white/80
+        "
+                                >
+                                    ✓ Fast Global Delivery
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div className="mt-16 space-y-6">
+                        <div className="mt-8 space-y-6">
+
+                        </div>
+
+                        <div className="mt-8 space-y-6">
 
                             <div>
                                 <p className="text-sm uppercase tracking-wider text-orange-400">
@@ -476,6 +514,6 @@ export default function ContactRFQSection() {
 
             </div>
 
-        </section>
+        </section >
     );
 }

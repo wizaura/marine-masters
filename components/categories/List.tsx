@@ -236,7 +236,7 @@ export default async function CategoriesList() {
                         lg:text-4xl
                     "
                   >
-                   Our Supply
+                    Our Supply
                   </h3>
 
                   <p
@@ -273,6 +273,105 @@ export default async function CategoriesList() {
             </article>
           </Link>
 
+        </div>
+
+        <div className="my-12 rounded-[32px] border border-neutral-300 bg-white p-8 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+
+            <div>
+              <span
+                className="
+                    inline-flex
+                    rounded-full
+                    bg-orange-100
+                    px-4
+                    py-2
+                    text-sm
+                    font-medium
+                    text-orange-700
+                "
+              >
+                Why Marine Masters
+              </span>
+
+              <h3
+                className="
+                    mt-4
+                    text-3xl
+                    font-bold
+                    text-neutral-900
+                    lg:text-4xl
+                "
+              >
+                Genuine Marine Engine Parts with Fast Global Delivery
+              </h3>
+
+              <p
+                className="
+                    mt-4
+                    max-w-2xl
+                    text-lg
+                    leading-relaxed
+                    text-neutral-600
+                "
+              >
+                We supply original and OEM-quality marine engine parts
+                sourced from trusted manufacturers worldwide. With an
+                extensive inventory network and efficient logistics,
+                we ensure rapid delivery to vessels, shipyards, and
+                fleet operators across global ports.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+
+              <div className="rounded-2xl bg-neutral-50 p-6">
+                <h4 className="font-semibold text-neutral-900">
+                  Original Parts
+                </h4>
+
+                <p className="mt-2 text-sm text-neutral-600">
+                  Genuine and OEM replacement parts for major marine
+                  engine brands with assured quality and reliability.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-neutral-50 p-6">
+                <h4 className="font-semibold text-neutral-900">
+                  Fast Delivery
+                </h4>
+
+                <p className="mt-2 text-sm text-neutral-600">
+                  Quick dispatch and worldwide shipping support to
+                  minimize vessel downtime and operational delays.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-neutral-50 p-6">
+                <h4 className="font-semibold text-neutral-900">
+                  Global Sourcing
+                </h4>
+
+                <p className="mt-2 text-sm text-neutral-600">
+                  Access to a wide network of manufacturers and
+                  suppliers across major maritime markets.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-neutral-50 p-6">
+                <h4 className="font-semibold text-neutral-900">
+                  Technical Support
+                </h4>
+
+                <p className="mt-2 text-sm text-neutral-600">
+                  Assistance in identifying the correct parts for
+                  your engine model and application.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
         </div>
 
         <SectionNotch />

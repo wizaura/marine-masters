@@ -52,7 +52,7 @@ export default function CTA() {
 
                             <div className="relative mx-8 h-[180px] w-[180px] shrink-0 overflow-hidden rounded-full">
                                 <Image
-                                    src="/ship-cta.jpg"
+                                    src="/hero-2.avif"
                                     alt=""
                                     fill
                                     className="object-cover"
