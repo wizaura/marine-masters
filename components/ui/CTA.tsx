@@ -25,6 +25,7 @@ export default function CTA() {
                                     src="/hero-2.avif"
                                     alt=""
                                     fill
+                                    sizes="100vw"
                                     className="object-cover"
                                 />
                             </div>
@@ -38,6 +39,7 @@ export default function CTA() {
                                     src="/hero-2.avif"
                                     alt=""
                                     fill
+                                    sizes="100vw"
                                     className="object-cover"
                                 />
                             </div>
@@ -54,6 +56,7 @@ export default function CTA() {
                                 <Image
                                     src="/hero-2.avif"
                                     alt=""
+                                    sizes="100vw"
                                     fill
                                     className="object-cover"
                                 />
