@@ -10,7 +10,7 @@ export default function HeroSection() {
 
                 {/* Background Image */}
                 <Image
-                    src="/hero-1.avif"
+                    src="/contact-hero.jpeg"
                     alt="Marine logistics"
                     fill
                     priority

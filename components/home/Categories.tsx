@@ -6,14 +6,14 @@ const categories = [
         title: "Marine Engine Parts",
         description:
             "Genuine and aftermarket spare parts for MAN B&W, Wärtsilä, Sulzer, Yanmar, and other marine engines.",
-        image: "/category-engine.avif",
+        image: "/engine-parts.jpeg",
         slug: "/categories/engine-parts",
     },
     {
         title: "Marine Machinery",
         description:
             "Pumps, compressors, purifiers, heat exchangers, and critical machinery components for marine operations.",
-        image: "/category-machinery.jpg",
+        image: "/machinery.jpg",
         slug: "/categories/machinery",
     },
 ];

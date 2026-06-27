@@ -62,7 +62,7 @@ export default function ContactInfoSection() {
                                         Email
                                     </p>
                                     <p className="text-neutral-600">
-                                        sales@marinemasters.com
+                                        marinemastersworldwide@outlook.com
                                     </p>
                                 </div>
                             </div>
@@ -96,23 +96,6 @@ export default function ContactInfoSection() {
 
                                     <p className="text-neutral-600">
                                         Singapore
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-4">
-                                <Clock3 className="mt-1 h-5 w-5 text-orange-400" />
-                                <div>
-                                    <p className="font-semibold">
-                                        Working Hours
-                                    </p>
-
-                                    <p className="text-neutral-600">
-                                        Monday – Saturday
-                                    </p>
-
-                                    <p className="text-neutral-600">
-                                        09:00 AM – 06:00 PM
                                     </p>
                                 </div>
                             </div>

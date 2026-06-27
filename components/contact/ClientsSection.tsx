@@ -212,7 +212,7 @@ export default function ContactRFQSection() {
                                 </p>
 
                                 <p className="mt-2 text-xl font-medium text-white">
-                                    sales@marinemasters.com
+                                    marinemastersworldwide@outlook.com
                                 </p>
                             </div>
 

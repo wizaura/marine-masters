@@ -10,11 +10,11 @@ export default function HeroSection() {
 
                 {/* Background Image */}
                 <Image
-                    src="/hero-1.avif"
+                    src="/about-hero-2.jpeg"
                     alt="Marine logistics"
                     fill
                     priority
-                    className="object-cover"
+                    className="object-cover object-bottom"
                 />
 
                 {/* Overlay */}
