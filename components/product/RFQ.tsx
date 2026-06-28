@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ProductRFQ({
     product,
@@ -48,33 +49,31 @@ export default function ProductRFQ({
         setSuccess(false);
 
         try {
-            const response =
-                await fetch(
-                    "/api/contact",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type":
-                                "application/json",
-                        },
-                        body: JSON.stringify({
-                            name,
-                            company,
-                            email,
-                            phone,
-                            country,
-                            quantity,
-                            productRequired: product.title,
-                            message,
-                        }),
-                    }
-                );
+            const templateParams = {
+                name,
+                company,
+                email,
+                phone,
+                country,
+                quantity,
+                productRequired: product.title,
+                message,
+            };
 
-            if (!response.ok) {
-                throw new Error(
-                    "Failed to send enquiry"
-                );
-            }
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_CUSTOMER_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+
 
             setSuccess(true);
 

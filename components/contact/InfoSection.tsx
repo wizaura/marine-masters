@@ -83,20 +83,13 @@ export default function ContactInfoSection() {
                                 <MapPin className="mt-1 h-5 w-5 text-orange-400" />
                                 <div>
                                     <p className="font-semibold">
-                                        Locations
+                                        Address
                                     </p>
 
                                     <p className="text-neutral-600">
-                                        Kochi, India
+                                        105, India tower, opposite india house, ruvapari road, bhavnagar gujarat 364001
                                     </p>
 
-                                    <p className="text-neutral-600">
-                                        Dubai, UAE
-                                    </p>
-
-                                    <p className="text-neutral-600">
-                                        Singapore
-                                    </p>
                                 </div>
                             </div>
 

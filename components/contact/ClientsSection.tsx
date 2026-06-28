@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactRFQSection() {
 
@@ -47,33 +48,30 @@ export default function ContactRFQSection() {
         setSuccess(false);
 
         try {
-            const response =
-                await fetch(
-                    "/api/contact",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type":
-                                "application/json",
-                        },
-                        body: JSON.stringify({
-                            name,
-                            company,
-                            email,
-                            phone,
-                            country,
-                            quantity,
-                            productRequired,
-                            message,
-                        }),
-                    }
-                );
+            const templateParams = {
+                name,
+                company,
+                email,
+                phone,
+                country,
+                quantity,
+                productRequired,
+                message,
+            };
 
-            if (!response.ok) {
-                throw new Error(
-                    "Failed to send enquiry"
-                );
-            }
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_CUSTOMER_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
 
             setSuccess(true);
 
@@ -218,11 +216,11 @@ export default function ContactRFQSection() {
 
                             <div>
                                 <p className="text-sm uppercase tracking-wider text-orange-400">
-                                    Locations
+                                    Address
                                 </p>
 
                                 <p className="mt-2 text-xl font-medium text-white">
-                                    Kochi • Dubai • Singapore
+                                    105, India tower, opposite india house, ruvapari road, bhavnagar gujarat 364001
                                 </p>
                             </div>
 
