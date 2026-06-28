@@ -16,7 +16,7 @@ export default function BrandHero({
                     src={
                         brand.logo
                             ? urlFor(brand.logo).width(1800).url()
-                            : "/placeholder.jpg"
+                            : "/logo-1.jpeg"
                     }
                     alt={brand.name}
                     fill
@@ -58,20 +58,6 @@ export default function BrandHero({
                         >
                             {brand.name}
                         </h1>
-
-                        {brand.description && (
-                            <p
-                                className="
-                                    mt-8
-                                    max-w-3xl
-                                    text-lg
-                                    text-white/80
-                                    md:text-xl
-                                "
-                            >
-                                {brand.description}
-                            </p>
-                        )}
 
                     </div>
                 </div>

@@ -82,7 +82,7 @@ export default function EngineBrandsGrid({ brands, slug }: { brands: any[], slug
                                                     1200
                                                 )
                                                 .url()
-                                            : "/placeholder.jpg"
+                                            : "/logo-1.jpeg"
                                     }
                                     alt={brand.name}
                                     fill

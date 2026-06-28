@@ -80,6 +80,20 @@ export default function MachineryBrandsGrid({
                                 {" "}brands available.
                             </h2>
 
+                            {machineryType.description && (
+                                <p
+                                    className="
+                                    mt-8
+                                    max-w-5xl
+                                    text-lg
+                                    text-neutral-600
+                                    md:text-xl
+                                "
+                                >
+                                    {machineryType.description}
+                                </p>
+                            )}
+
                             <p
                                 className="
                                     mt-6
@@ -127,7 +141,7 @@ export default function MachineryBrandsGrid({
                                                     1800
                                                 )
                                                 .url()
-                                            : "/placeholder.jpg"
+                                            : "/logo-1.jpeg"
                                     }
                                     alt={brand.name}
                                     fill

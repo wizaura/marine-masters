@@ -16,7 +16,7 @@ export default function MachineryBrandHero({
                             ? urlFor(brand.logo)
                                   .width(1800)
                                   .url()
-                            : "/placeholder.jpg"
+                            : "/logo-1.jpeg"
                     }
                     alt={brand.name}
                     fill

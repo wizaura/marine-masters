@@ -42,7 +42,7 @@ export default async function EngineModelPartTypes({
                                             ? urlFor(part.image)
                                                   .width(1200)
                                                   .url()
-                                            : "/placeholder.jpg"
+                                            : "/logo-1.jpeg"
                                     }
                                     alt={part.title}
                                     fill

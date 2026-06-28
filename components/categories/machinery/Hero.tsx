@@ -18,7 +18,7 @@ export default function MachineryTypeHero({
                             ? urlFor(machineryType.image)
                                   .width(1800)
                                   .url()
-                            : "/placeholder.jpg"
+                            : "/logo-1.jpeg"
                     }
                     alt={machineryType.title}
                     fill
@@ -47,20 +47,6 @@ export default function MachineryTypeHero({
                         >
                             {machineryType.title}
                         </h1>
-
-                        {machineryType.description && (
-                            <p
-                                className="
-                                    mt-8
-                                    max-w-3xl
-                                    text-lg
-                                    text-white/80
-                                    md:text-xl
-                                "
-                            >
-                                {machineryType.description}
-                            </p>
-                        )}
 
                     </div>
                 </div>

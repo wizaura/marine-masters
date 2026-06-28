@@ -4,10 +4,12 @@ import { getModelsByBrand } from "@/sanity/lib/getModelsByBrand";
 
 type Props = {
     brandId: string;
+    description: string;
 };
 
 export default async function EngineModelsGrid({
     brandId,
+    description,
 }: Props) {
     const models = await getModelsByBrand(
         brandId
@@ -37,10 +39,24 @@ export default async function EngineModelsGrid({
                             {models.length} engine models available.
                         </h2>
 
+                        {description && (
+                            <p
+                                className="
+                                    mt-8
+                                    max-w-5xl
+                                    text-lg
+                                    text-neutral-600
+                                    md:text-xl
+                                "
+                            >
+                                {description}
+                            </p>
+                        )}
+
                         <p
                             className="
                                 mt-6
-                                max-w-3xl
+                                max-w-5xl
                                 text-lg
                                 text-neutral-600
                             "

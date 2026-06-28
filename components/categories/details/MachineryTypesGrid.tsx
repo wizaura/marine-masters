@@ -38,7 +38,7 @@ export default async function MachineryTypesGrid() {
                                             ? urlFor(item.image)
                                                 .width(1800)
                                                 .url()
-                                            : "/placeholder.jpg"
+                                            : "/logo-1.jpeg"
                                     }
                                     alt={item.title}
                                     fill

@@ -19,7 +19,7 @@ export default function ProductHero({
                             ? urlFor(image)
                                   .width(1800)      
                                   .url()
-                            : "/placeholder.jpg"
+                            : "/logo-1.jpeg"
                     }
                     alt={product.title}
                     fill

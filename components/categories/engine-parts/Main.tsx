@@ -12,6 +12,7 @@ export default function EngineBrandPage({
 
             <EngineModelsGrid
                 brandId={brand._id}
+                description={brand.description}
             />
         </>
     );
