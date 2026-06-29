@@ -23,7 +23,7 @@ export default async function CategoryDetails({
 
             {category.slug.current === "engine-parts" ? (
                 <>
-                    <EngineBrandsGrid brands={brands} slug={category.slug.current}/>
+                    <EngineBrandsGrid brands={brands} slug={category?.slug?.current}/>
                 </>
             ) : (
                 <>
