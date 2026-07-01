@@ -8,7 +8,7 @@ export default function ClientsSection() {
             <div className="mx-auto max-w-8xl rounded-4xl bg-black px-10 py-24 overflow-hidden">
 
                 <p className="mb-20 text-center text-xl text-white/70 font-medium">
-                    Trusted by clients globally
+                    Brands we supply
                 </p>
 
                 {/* Scrolling logo marquee */}
