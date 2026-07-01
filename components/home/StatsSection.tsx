@@ -7,7 +7,7 @@ export default function StatsSection() {
 
                 {/* Left: warehouse image */}
                 <img
-                    src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1600"
+                    src="HERO-11.jpeg"
                     alt="Warehouse interior"
                     className="h-[550px] w-full rounded-[40px] object-cover"
                 />
