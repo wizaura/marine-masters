@@ -266,7 +266,7 @@ export default function FindPartsModal({
                     font-semibold
                 "
                                         >
-                                            {part.title}
+                                            {part?.title}
                                         </h4>
 
                                         <p

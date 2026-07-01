@@ -177,7 +177,7 @@ export default function EngineBrandsGrid({ brands, slug }: { brands: any[], slug
                                             </span>
 
                                             <Link
-                                                href={`/categories/${slug}/${brand.slug.current}`}
+                                                href={`/categories/${slug}/${brand?.slug?.current}`}
                                                 onClick={(
                                                     e
                                                 ) =>

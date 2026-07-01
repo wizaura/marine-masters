@@ -73,7 +73,7 @@ export default defineType({
         list: [
           { title: "Genuine", value: "genuine" },
           { title: "Reconditioned", value: "reconditioned" },
-          { title: "Genuine & Reconditioned", value: "both" },
+          { title: "Genuine & Reconditioned", value: "genuine & reconditioned" },
         ],
       },
     }),
