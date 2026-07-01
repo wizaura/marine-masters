@@ -7,6 +7,15 @@ export default defineType({
 
   fields: [
     defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+      description: "Lower numbers appear first.",
+      initialValue: 1,
+      validation: (Rule) => Rule.required().integer().min(1),
+    }),
+    
+    defineField({
       name: "name",
       title: "Brand Name",
       type: "string",

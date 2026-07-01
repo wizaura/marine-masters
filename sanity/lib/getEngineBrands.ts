@@ -2,7 +2,7 @@ import { client } from "./client";
 
 export async function getEngineBrands() {
     return client.fetch(`
-        *[_type == "engineBrand"] | order(name asc) {
+        *[_type == "engineBrand"] | order(order asc, name asc) {
             _id,
             name,
             slug,
