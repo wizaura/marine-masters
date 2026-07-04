@@ -1,11 +1,6 @@
-import Link from "next/link";
-
-import { getMachineryTypes } from "@/sanity/lib/getMachineryTypes";
 import MachineryTypesGrid from "../details/MachineryTypesGrid";
 
 export default async function MachineryCategories() {
-    const categories =
-        await getMachineryTypes();
 
     return (
         <section
