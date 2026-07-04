@@ -13,6 +13,9 @@ export default async function CategoryDetails({
     category,
 }: CategoryDetailsProps) {
 
+    const isEngineParts =
+        category.slug.current === "engine-parts";
+
     const brands = await getEngineBrands();
 
     return (
@@ -21,9 +24,9 @@ export default async function CategoryDetails({
 
             <CategoryIntro category={category} />
 
-            {category.slug.current === "engine-parts" ? (
+            {isEngineParts ? (
                 <>
-                    <EngineBrandsGrid brands={brands} slug={category?.slug?.current}/>
+                    <EngineBrandsGrid brands={brands} slug={category?.slug?.current} />
                 </>
             ) : (
                 <>
@@ -31,8 +34,6 @@ export default async function CategoryDetails({
                     <MachineryToEnginePartsCTA />
                 </>
             )}
-
-            {/* <HomeCTA /> */}
         </>
     );
 }

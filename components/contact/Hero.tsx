@@ -1,5 +1,3 @@
-"use client";
-
 import HeroSection from "./MainHero";
 import MissionSection from "./InfoSection";
 import ClientsSection from "./ClientsSection";

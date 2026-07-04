@@ -1,5 +1,3 @@
-"use client";
-
 const LOGOS = ["Man", "Wartsila", "Yanmar", "Daihatsu", "Mitsubishi", "Sulzer", "Bergen"];
 
 export default function ClientsSection() {

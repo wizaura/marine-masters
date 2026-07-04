@@ -1,14 +1,32 @@
 import CTA from "../ui/CTA";
 import HomeBlogsSection from "./Blog";
 
-export default function HomeInsights() {
+interface HomeBlog {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  featuredImage?: any;
+  excerpt?: string;
+  publishedAt: string;
+  readingTime?: number;
+}
+
+type Props = {
+    blogs: HomeBlog[];
+};
+
+export default function HomeInsights({
+    blogs,
+}: Props) {
     return (
         <section className="relative bg-white">
 
 
             {/* Blog Covers CTA */}
             <div className="relative z-20 mx-4">
-                <HomeBlogsSection />
+                <HomeBlogsSection blogs={blogs} />
             </div>
 
             {/* CTA Behind */}

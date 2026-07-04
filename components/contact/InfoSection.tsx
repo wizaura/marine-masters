@@ -1,14 +1,10 @@
-"use client";
-
 import {
     Mail,
     MapPin,
-    Phone,
     ShieldCheck,
     Globe,
     Package,
     Wrench,
-    Clock3,
 } from "lucide-react";
 
 export default function ContactInfoSection() {
@@ -67,18 +63,6 @@ export default function ContactInfoSection() {
                                 </div>
                             </div>
 
-                            {/* <div className="flex gap-4">
-                                <Phone className="mt-1 h-5 w-5 text-orange-400" />
-                                <div>
-                                    <p className="font-semibold">
-                                        Phone
-                                    </p>
-                                    <p className="text-neutral-600">
-                                        +91 98765 43210
-                                    </p>
-                                </div>
-                            </div> */}
-
                             <div className="flex gap-4">
                                 <MapPin className="mt-1 h-5 w-5 text-orange-400" />
                                 <div>
@@ -87,7 +71,7 @@ export default function ContactInfoSection() {
                                     </p>
 
                                     <p className="text-neutral-600">
-                                        105, India tower, opposite india house, ruvapari road, bhavnagar gujarat 364001
+                                        105, India tower, opposite India House, Ruvapari Road, Bhavnagar, Gujarat, 364001
                                     </p>
 
                                 </div>

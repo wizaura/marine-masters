@@ -1,10 +1,7 @@
-"use client";
-
 import HeroSection from "./MainHero";
 import MissionSection from "./OverviewSection";
 import StatsSection from "./StatsSection";
 import ClientsSection from "./MissionSection";
-import { ChevronDown } from "lucide-react";
 import SectionNotch from "../ui/SectionNotch";
 
 export default function Hero() {

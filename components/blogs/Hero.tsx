@@ -1,13 +1,19 @@
 import HeroSection from "./MainHero";
 import SectionNotch from "../ui/SectionNotch";
-import BlogsPage from "./Blog";
+import BlogsList from "./Blog";
 import CTA from "../ui/CTA";
+
+type Props = {
+    page: number;
+    blogs: any[];
+    pages: number;
+};
 
 export default function Hero({
     page,
-}: {
-    page: number;
-}) {
+    blogs,
+    pages,
+}: Props) {
     return (
         <section className="bg-white">
 
@@ -29,7 +35,7 @@ export default function Hero({
                 <div className="absolute -top-12 left-0 h-12 w-full bg-white" />
 
                 <div className="relative z-20 mx-4">
-                    <BlogsPage page={page}/>
+                    <BlogsList page={page} blogs={blogs} pages={pages} />
                 </div>
 
                 <div className="sticky bottom-0 mx-4">

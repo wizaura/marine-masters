@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { Play } from "lucide-react";
 
 export default function HeroSection() {
     return (
@@ -11,9 +8,11 @@ export default function HeroSection() {
                 {/* Background Image */}
                 <Image
                     src="/hero-a.webp"
-                    alt="Marine logistics"
+                    alt="Marine logistics and engine parts supply"
                     fill
                     priority
+                    fetchPriority="high"
+                    sizes="100vw"
                     className="object-cover"
                 />
 
@@ -65,11 +64,11 @@ export default function HeroSection() {
                 text-white
             "
                         >
-                            Global Marine
+                            Marine Masters
                             <br />
                             Engine Parts &
                             <br />
-                            Machinery Supply
+                            Ship Machinery Supply
                         </h1>
 
                         <p
@@ -109,11 +108,11 @@ export default function HeroSection() {
             whitespace-nowrap
             text-[clamp(5rem,14vw,14rem)]
             font-bold
-            leading-none
+            leading-tight
             text-white
         "
                         >
-                            Marine Parts
+                            Engine Parts
                         </span>
 
                         <span
@@ -132,11 +131,11 @@ export default function HeroSection() {
             whitespace-nowrap
             text-[clamp(5rem,14vw,14rem)]
             font-bold
-            leading-none
+            leading-tight
             text-white
         "
                         >
-                            Marine Machinery
+                            Ship Machinery
                         </span>
 
                         <span

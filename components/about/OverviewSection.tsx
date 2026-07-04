@@ -1,5 +1,3 @@
-"use client";
-
 export default function OverviewSection() {
     return (
         <section
@@ -32,7 +30,7 @@ export default function OverviewSection() {
 
                     {/* Right */}
                     <div>
-                        <h2
+                        <h1
                             className="
             text-3xl
             md:text-5xl
@@ -45,7 +43,7 @@ export default function OverviewSection() {
                             <span className="text-orange-400">Marine Masters</span> is a trusted supplier
                             of marine engine spare parts, ship machinery, and critical marine
                             equipment for vessels operating worldwide.
-                        </h2>
+                        </h1>
 
                         <div
                             className="

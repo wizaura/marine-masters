@@ -8,7 +8,6 @@ import SideNotch from "@/components/ui/SideNotch";
 import { urlFor } from "@/sanity/lib/image";
 import { useEffect, useState } from "react";
 import FindPartsModal from "./FindEnginePartsModal";
-import { getModelsByBrand } from "@/sanity/lib/getModelsByBrand";
 
 export default function EngineBrandsGrid({ brands, slug }: { brands: any[], slug: string }) {
     const [selectedBrand, setSelectedBrand] =

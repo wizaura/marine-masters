@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { useEffect } from "react";
-import { getPartTypesByEngineModel } from "@/sanity/lib/getPartTypesByEngineModel";
 import { useRouter } from "next/navigation";
 
 type Props = {

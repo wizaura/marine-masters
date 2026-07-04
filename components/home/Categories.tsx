@@ -1,24 +1,20 @@
 import Link from "next/link";
 import SideNotch from "../ui/SideNotch";
 
-const categories = [
-    {
-        title: "Marine Engine Parts",
-        description:
-            "Genuine and aftermarket spare parts for MAN B&W, Wärtsilä, Sulzer, Yanmar, and other marine engines.",
-        image: "/engine-parts.jpeg",
-        slug: "/categories/engine-parts",
-    },
-    {
-        title: "Marine Machinery",
-        description:
-            "Pumps, compressors, purifiers, heat exchangers, and critical machinery components for marine operations.",
-        image: "/machinery.jpg",
-        slug: "/categories/machinery",
-    },
-];
+interface HomeCategory {
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+}
 
-export default function HomeCategories() {
+type Props = {
+    categories: HomeCategory[];
+};
+
+export default function HomeCategories({
+    categories,
+}: Props) {
     return (
         <section className="bg-[#f3f3f3] px-8 pt-20 pb-12">
             <div className="mx-auto max-w-8xl">

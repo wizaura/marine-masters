@@ -1,6 +1,7 @@
 import { CalendarDays } from "lucide-react";
 
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 
 type Props = {
     blog: any;
@@ -13,24 +14,21 @@ export default function BlogHero({
         <section className="relative p-3">
             <div className="relative h-[75vh] overflow-hidden rounded-4xl">
 
-                <img
+                <Image
                     src={
                         blog.featuredImage
-                            ? urlFor(
-                                  blog.featuredImage
-                              )
-                                  .width(2000)
-                                  .url()
+                            ? urlFor(blog.featuredImage)
+                                .width(2000)
+                                .url()
                             : "/placeholder.jpg"
                     }
                     alt={blog.title}
-                    className="
-                        absolute
-                        inset-0
-                        h-full
-                        w-full
-                        object-cover
-                    "
+                    fill
+                    priority
+                    fetchPriority="high"
+                    sizes="100vw"
+                    quality={85}
+                    className="object-cover"
                 />
 
                 <div className="absolute inset-0 bg-black/50" />

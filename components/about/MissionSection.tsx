@@ -1,5 +1,3 @@
-"use client";
-
 export default function MissionSection() {
     return (
         <section

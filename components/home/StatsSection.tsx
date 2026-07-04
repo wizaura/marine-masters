@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 
 export default function StatsSection() {
     return (
@@ -6,11 +6,16 @@ export default function StatsSection() {
             <div className="grid lg:grid-cols-2 gap-20 items-start">
 
                 {/* Left: warehouse image */}
-                <img
-                    src="HERO-11.jpeg"
-                    alt="Warehouse interior"
-                    className="h-[550px] w-full rounded-[40px] object-cover"
-                />
+                <div className="relative h-[550px] w-full overflow-hidden rounded-[40px]">
+                    <Image
+                        src="/HERO-11.webp"
+                        alt="Warehouse interior"
+                        fill
+                        priority
+                        sizes="100vw"
+                        className="object-cover"
+                    />
+                </div>
 
                 {/* Right: stats */}
                 <div>

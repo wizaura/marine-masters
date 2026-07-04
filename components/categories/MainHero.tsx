@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -9,10 +8,12 @@ export default function HeroSection() {
 
                 {/* Background Image */}
                 <Image
-                    src="/about-hero.jpeg"
-                    alt="Marine logistics"
+                    src="/about-hero.webp"
+                    alt="Marine Masters supplying genuine marine engine parts and ship machinery"
                     fill
                     priority
+                    fetchPriority="high"
+                    sizes="100vw"
                     className="object-cover"
                 />
 

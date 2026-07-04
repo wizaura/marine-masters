@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { Play } from "lucide-react";
 
 export default function HeroSection() {
     return (
@@ -10,10 +7,12 @@ export default function HeroSection() {
 
                 {/* Background Image */}
                 <Image
-                    src="/blogs-hero.jpeg"
-                    alt="Marine logistics"
+                    src="/blogs-hero.webp"
+                    alt="Marine Masters supplying genuine marine engine parts and ship machinery"
                     fill
                     priority
+                    fetchPriority="high"
+                    sizes="100vw"
                     className="object-cover"
                 />
 

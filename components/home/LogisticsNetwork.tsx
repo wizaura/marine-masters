@@ -102,7 +102,7 @@ export default function LogisticsNetworkSection() {
                 {/* Map */}
                 <div className="w-full px-4">
                     <Image
-                        src="/map.avif"
+                        src="/map-2.webp"
                         alt="Global Logistics Network"
                         width={2000}
                         height={1000}

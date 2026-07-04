@@ -1,14 +1,25 @@
 import CTA from "../ui/CTA";
 import FAQSection from "./FAQ";
 
-export default function ContactInsights() {
+type FAQ = {
+    question: string;
+    answer: string;
+};
+
+type Props = {
+    faqs: FAQ[];
+};
+
+export default function ContactInsights({
+    faqs,
+}: Props) {
     return (
         <section className="relative bg-white">
 
 
             {/* Blog Covers CTA */}
             <div className="relative z-20 mx-4">
-                <FAQSection />
+                <FAQSection faqs={faqs} />
             </div>
 
             {/* CTA Behind */}

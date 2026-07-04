@@ -3,7 +3,13 @@ import SectionNotch from "../ui/SectionNotch";
 import CTA from "../ui/CTA";
 import CategoriesList from "./List";
 
-export default function Hero() {
+type Props = {
+    categories: any[];
+};
+
+export default function Hero({
+    categories,
+}: Props) {
     return (
         <section className="bg-white">
 
@@ -25,7 +31,7 @@ export default function Hero() {
                 <div className="absolute -top-12 left-0 h-12 w-full bg-white" />
 
                 <div className="relative z-20 mx-4">
-                    <CategoriesList/>
+                    <CategoriesList categories={categories} />
                 </div>
 
                 <div className="sticky bottom-0 mx-4">

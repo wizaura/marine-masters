@@ -7,13 +7,27 @@ import {
 
 import SectionNotch from "../ui/SectionNotch";
 import SideNotch from "../ui/SideNotch";
-
-import { getLatestBlogs } from "@/sanity/lib/getLatestBlogs";
 import { urlFor } from "@/sanity/lib/image";
 
-export default async function HomeBlogsSection() {
-    const blogs =
-        await getLatestBlogs();
+interface HomeBlog {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  featuredImage?: any;
+  excerpt?: string;
+  publishedAt: string;
+  readingTime?: number;
+}
+
+type Props = {
+    blogs: HomeBlog[];
+};
+
+export default function HomeBlogsSection({
+    blogs,
+}: Props) {
 
     return (
         <section
@@ -134,32 +148,28 @@ export default async function HomeBlogsSection() {
                                                     relative
                                                     overflow-hidden
                                                     rounded-[40px]
+                                                    h-[320px]
+                                                    md:h-[450px]
                                                 "
                                             >
-                                                <img
+                                                <Image
                                                     src={
                                                         blog.featuredImage
-                                                            ? urlFor(
-                                                                blog.featuredImage
-                                                            )
-                                                                .width(
-                                                                    1600
-                                                                )
+                                                            ? urlFor(blog.featuredImage)
+                                                                .width(1600)
+                                                                .quality(75)
                                                                 .url()
-                                                            : "/placeholder.jpg"
+                                                            : "/logo-1.jpeg"
                                                     }
-                                                    alt={
-                                                        blog.title
-                                                    }
+                                                    alt={blog.title}
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 50vw"
                                                     className="
-                                                            h-[320px]
-                                                            w-full
-                                                            object-cover
-                                                            transition
-                                                            duration-700
-                                                            group-hover:scale-105
-                                                            md:h-[450px]
-                                                        "
+                                                        object-cover
+                                                        transition
+                                                        duration-700
+                                                        group-hover:scale-105
+                                                    "
                                                 />
 
                                                 <div

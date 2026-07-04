@@ -1,14 +1,16 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
-import { getCategories } from "@/sanity/lib/getCategories";
 import { urlFor } from "@/sanity/lib/image";
 import SectionNotch from "../ui/SectionNotch";
 import Image from "next/image";
 import SideNotch from "../ui/SideNotch";
 
-export default async function CategoriesList() {
-  const categories = await getCategories();
+type Props = {
+  categories: any[];
+};
+
+export default function CategoriesList({
+  categories,
+}: Props) {
 
   return (
     <section className="px-6 py-20 bg-[#f3f3f3] rounded-4xl">
@@ -44,39 +46,26 @@ export default async function CategoriesList() {
             aspect-square
         "
               >
-                <img
-                  src={
-                    category.image
-                      ? urlFor(category.image)
-                        .width(1600)
-                        .url()
-                      : "/placeholder.jpg"
-                  }
-                  alt={category.title}
-                  className="
-                absolute
-                inset-0
-                h-full
-                w-full
-                object-cover
-                transition
-                duration-700
-                group-hover:scale-105
-            "
-                />
-
-                {/* Overlay */}
-
-                <div
-                  className="
-                absolute
-                inset-0
-                bg-gradient-to-b
-                from-black/20
-                via-black/20
-                to-black/70
-            "
-                />
+                <div className="absolute inset-0">
+                  <Image
+                    src={
+                      category.image
+                        ? urlFor(category.image)
+                          .width(1600)
+                          .url()
+                        : "/logo-1.jpeg"
+                    }
+                    alt={category.title}
+                    fill
+                    sizes="(max-width:768px) 100vw, 33vw"
+                    className="
+                      object-cover
+                      transition
+                      duration-700
+                      group-hover:scale-105
+                    "
+                  />
+                </div>
 
                 {/* Content */}
 
@@ -168,20 +157,20 @@ export default async function CategoriesList() {
             aspect-square
         "
             >
-              <img
-                src={"/hero-2.avif"}
-                alt="supply-image"
-                className="
-                absolute
-                inset-0
-                h-full
-                w-full
-                object-cover
-                transition
-                duration-700
-                group-hover:scale-105
-            "
-              />
+              <div className="absolute inset-0">
+                <Image
+                  src="/hero-2.avif"
+                  alt="Marine spare parts supply"
+                  fill
+                  sizes="(max-width:768px) 100vw, 33vw"
+                  className="
+                    object-cover
+                    transition
+                    duration-700
+                    group-hover:scale-105
+                  "
+                />
+              </div>
 
               {/* Overlay */}
 

@@ -6,20 +6,12 @@ import { getRelatedBlogs } from "@/sanity/lib/getRelatedBlogs";
 import { urlFor } from "@/sanity/lib/image";
 
 type Props = {
-    currentBlogId: string;
-    category: string;
+    blogs: any[];
 };
 
-export default async function RelatedBlogs({
-    currentBlogId,
-    category,
+export default function RelatedBlogs({
+    blogs,
 }: Props) {
-    const blogs =
-        await getRelatedBlogs(
-            currentBlogId,
-            category
-        );
-
     if (!blogs.length) {
         return null;
     }
@@ -89,11 +81,11 @@ export default async function RelatedBlogs({
                                         src={
                                             blog.featuredImage
                                                 ? urlFor(
-                                                      blog.featuredImage
-                                                  )
-                                                      .width(1200)
-                                                      .url()
-                                                : "/placeholder.jpg"
+                                                    blog.featuredImage
+                                                )
+                                                    .width(1200)
+                                                    .url()
+                                                : "/logo-1.jpeg"
                                         }
                                         alt={blog.title}
                                         fill

@@ -4,28 +4,24 @@ import {
     CalendarDays,
     Clock,
 } from "lucide-react";
-
-import BlogCard from "./BlogCard";
 import SideNotch from "../ui/SideNotch";
-
-import { getBlogs } from "@/sanity/lib/getBlogs";
 import { urlFor } from "@/sanity/lib/image";
 import SectionNotch from "../ui/SectionNotch";
+import Image from "next/image";
 
-export default async function BlogsPage({
-    page,
-}: {
+type Props = {
     page: number;
-}) {
-    const currentPage = page;
+    blogs: any[];
+    pages: number;
+};
 
-    const {
-        blogs,
-        pages,
-    } = await getBlogs(
-        page,
-        12
-    );
+export default function BlogList({
+    page,
+    blogs,
+    pages,
+}: Props) {
+
+    const currentPage = page;
 
     return (
         <section className="px-8 py-24 bg-[#f3f3f3] rounded-4xl">
@@ -121,7 +117,7 @@ export default async function BlogsPage({
                                     Latest Blogs
                                 </p>
 
-                                <h2
+                                <h1
                                     className="
                                         text-5xl
                                         font-bold
@@ -129,8 +125,8 @@ export default async function BlogsPage({
                                         lg:text-7xl
                                     "
                                 >
-                                    Latest insights in marine logistics
-                                </h2>
+                                    Latest insights by Marine Masters
+                                </h1>
                             </div>
 
                             {/* Right Side */}
@@ -153,31 +149,26 @@ export default async function BlogsPage({
                                                         relative
                                                         overflow-hidden
                                                         rounded-[40px]
+                                                        h-[320px]
+                                                        md:h-[450px]
                                                     "
                                                 >
-                                                    <img
+                                                    <Image
                                                         src={
                                                             blog.featuredImage
-                                                                ? urlFor(
-                                                                    blog.featuredImage
-                                                                )
-                                                                    .width(
-                                                                        1600
-                                                                    )
+                                                                ? urlFor(blog.featuredImage)
+                                                                    .width(1600)
                                                                     .url()
-                                                                : "/placeholder.jpg"
+                                                                : "/logo-1.jpeg"
                                                         }
-                                                        alt={
-                                                            blog.title
-                                                        }
+                                                        alt={blog.title}
+                                                        fill
+                                                        sizes="(max-width: 768px) 100vw, 1200px"
                                                         className="
-                                                            h-[320px]
-                                                            w-full
                                                             object-cover
                                                             transition
                                                             duration-700
                                                             group-hover:scale-105
-                                                            md:h-[450px]
                                                         "
                                                     />
 
@@ -326,12 +317,11 @@ export default async function BlogsPage({
                                                 rounded-full
                                                 border
                                                 transition
-                                                ${
-                                                    currentPage ===
+                                                ${currentPage ===
                                                     i +
-                                                        1
-                                                        ? "bg-black text-white"
-                                                        : "bg-white hover:bg-neutral-100"
+                                                    1
+                                                    ? "bg-black text-white"
+                                                    : "bg-white hover:bg-neutral-100"
                                                 }
                                             `}
                                         >

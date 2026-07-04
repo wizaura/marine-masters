@@ -1,41 +1,17 @@
-"use client";
-
 import SectionNotch from "../ui/SectionNotch";
 
-const FAQS = [
-    {
-        question: "What marine spare parts do you supply?",
-        answer:
-            "We supply genuine and reconditioned marine engine spares, turbocharger components, pumps, compressors, separators, governors, and deck machinery parts.",
-    },
-    {
-        question: "Can you source obsolete or hard-to-find parts?",
-        answer:
-            "Yes. Through our global sourcing network, we help ship owners and operators locate discontinued and difficult-to-source marine components.",
-    },
-    {
-        question: "Do you provide worldwide shipping?",
-        answer:
-            "Yes, we arrange international delivery to ports, shipyards, and vessel locations worldwide with reliable logistics support.",
-    },
-    {
-        question: "Which engine brands do you support?",
-        answer:
-            "We supply parts for MAN, Wärtsilä, Yanmar, Daihatsu, Mitsubishi, Bergen, Sulzer, and many other leading marine engine manufacturers.",
-    },
-    {
-        question: "How quickly can you provide quotations?",
-        answer:
-            "Most RFQ requests receive a response within 24 hours, including availability, pricing, and estimated delivery schedules.",
-    },
-    {
-        question: "Do you supply genuine and OEM parts?",
-        answer:
-            "Yes. Depending on customer requirements, we offer genuine, OEM, and high-quality replacement parts with full specification details.",
-    },
-];
+type FAQ = {
+    question: string;
+    answer: string;
+};
 
-export default function FAQSection() {
+type Props = {
+    faqs: FAQ[];
+};
+
+export default function FAQSection({
+    faqs,
+}: Props) {
     return (
         <section>
 
@@ -100,7 +76,7 @@ export default function FAQSection() {
                             "
                         >
 
-                            {FAQS.map((faq) => (
+                            {faqs.map((faq) => (
                                 <div key={faq.question}>
 
                                     <h3
