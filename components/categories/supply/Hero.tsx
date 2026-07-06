@@ -1,18 +1,18 @@
+import Image from "next/image";
+
 export default function ShipSupplyHero() {
     return (
         <section className="relative p-3">
             <div className="relative h-[75vh] overflow-hidden rounded-[48px]">
 
-                <img
+                <Image
                     src="/hero-2.avif"
                     alt="Ship Supply"
-                    className="
-        absolute
-        inset-0
-        h-full
-        w-full
-        object-cover
-    "
+                    fill
+                    priority
+                    fetchPriority="high"
+                    sizes="100vw"
+                    className="object-cover"
                     style={{
                         objectPosition: "50% 80%",
                     }}

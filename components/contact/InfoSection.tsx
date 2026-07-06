@@ -58,6 +58,18 @@ export default function ContactInfoSection() {
                                         Email
                                     </p>
                                     <p className="text-neutral-600">
+                                        sales@shipsparesworldwide.com
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                                <Mail className="mt-1 h-5 w-5 text-orange-400" />
+                                <div>
+                                    <p className="font-semibold">
+                                        Email
+                                    </p>
+                                    <p className="text-neutral-600">
                                         marinemastersworldwide@outlook.com
                                     </p>
                                 </div>

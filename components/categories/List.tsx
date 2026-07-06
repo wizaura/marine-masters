@@ -176,13 +176,13 @@ export default function CategoriesList({
 
               <div
                 className="
-                absolute
-                inset-0
-                bg-gradient-to-b
-                from-black/20
-                via-black/20
-                to-black/70
-            "
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-black/80
+      via-black/30
+      to-transparent
+    "
               />
 
               {/* Content */}

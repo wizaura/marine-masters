@@ -2,7 +2,7 @@ import { client } from "./client";
 
 export async function getMachineryTypes() {
   return client.fetch(`
-    *[_type == "machineryType"] | order(title asc) {
+    *[_type == "machineryType"] | order(order asc, title asc) {
       _id,
       title,
       slug,
