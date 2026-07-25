@@ -5,7 +5,7 @@ export default function NotFound() {
     return (
         <main className="relative overflow-hidden bg-slate-900">
             {/* Background */}
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Orange glow */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.28),transparent_60%)]" />
 
