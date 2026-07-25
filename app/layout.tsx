@@ -190,6 +190,7 @@ export default function RootLayout({
                 "OEM Components",
                 "Industrial Machinery",
               ],
+              
 
               sameAs: [
                 // Add LinkedIn, Facebook, Instagram etc.
