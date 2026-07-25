@@ -159,7 +159,7 @@ export default function RootLayout({
 
               logo: "https://shipsparesworldwide.com/logo.png",
 
-              email: "marinemastersworldwide@outlook.com",
+              email: "sales@shipsparesworldwide.com",
 
               address: {
                 "@type": "PostalAddress",
@@ -177,7 +177,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "Sales",
-                email: "marinemastersworldwide@outlook.com",
+                email: "sales@shipsparesworldwide.com",
                 areaServed: "Worldwide",
                 availableLanguage: ["English"],
               },
