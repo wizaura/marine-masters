@@ -141,7 +141,27 @@ export default function Navbar() {
             </Link>
 
             {/* CTA */}
-            <div className="flex justify-end">
+            <div className="flex justify-end gap-2">
+              <Link
+                href="/updates"
+                className={`
+            rounded-full
+            px-6
+            py-3
+            font-semibold
+            transition
+            ${isActive("/updates")
+                    ? scrolled
+                      ? "bg-orange-400 text-white"
+                      : "bg-white text-black"
+                    : scrolled
+                      ? "bg-neutral-100 text-black hover:bg-neutral-200"
+                      : "bg-white/20 text-white backdrop-blur-md hover:bg-white/30"
+                  }
+        `}
+              >
+                Updates
+              </Link>
               <Link
                 href="/contact"
                 className="
@@ -283,6 +303,27 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              key={"updates"}
+              href={"/updates"}
+              onClick={() =>
+                setMobileOpen(false)
+              }
+              className={`
+            border-b
+            border-white/10
+            py-7
+            text-4xl
+            font-bold
+            transition
+            ${isActive("/updates")
+                  ? "text-orange-400"
+                  : "text-white"
+                }
+        `}
+            >
+              Updates
+            </Link>
           </div>
 
           {/* Bottom CTA */}
