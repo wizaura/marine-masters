@@ -6,10 +6,8 @@ export async function getUpdates() {
         | order(_createdAt desc)[0...24]{
             _id,
             _createdAt,
-
             title,
             slug,
-
             shortDescription,
             condition,
             image,
@@ -17,7 +15,6 @@ export async function getUpdates() {
             engineModel->{
                 slug,
                 name,
-
                 brand->{
                     slug,
                     name

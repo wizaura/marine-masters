@@ -1,18 +1,32 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import SectionNotch from "../ui/SectionNotch";
+import { useState } from "react";
 
 type Props = {
     products: any[];
 };
 
+const PAGE_SIZE = 6;
+
 export default function UpdatesGrid({
     products,
 }: Props) {
 
+    const [page, setPage] = useState(1);
+
+    const totalPages = Math.ceil(products.length / PAGE_SIZE);
+
+    const currentProducts = products.slice(
+        (page - 1) * PAGE_SIZE,
+        page * PAGE_SIZE
+    );
+
     return (
-        <section className="bg-gray-50 px-8 py-24">
+        <section className="bg-gray-50 px-4 sm:px-8 py-24">
             <div className="mx-auto max-w-8xl">
 
                 <div className="mb-16 grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
@@ -54,7 +68,7 @@ export default function UpdatesGrid({
 
                 <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-                    {products.map((product: any) => {
+                    {currentProducts.map((product: any) => {
                         const href = product.engineModel
                             ? `/categories/engine-parts/${product.engineModel.brand.slug.current
                             }/${product.engineModel.slug.current
@@ -153,6 +167,63 @@ export default function UpdatesGrid({
                     })}
 
                 </div>
+
+                <div className="mt-14 flex items-center justify-center gap-2">
+                    {/* Previous */}
+                    <button
+                        onClick={() => setPage((p) => Math.max(1, p - 1))}
+                        disabled={page === 1}
+                        className="
+            flex h-11 items-center rounded-xl border border-gray-200
+            px-4 text-sm font-medium transition-all
+            hover:border-orange-400 hover:bg-orange-50 hover:text-orange-500
+            disabled:cursor-not-allowed disabled:opacity-40
+        "
+                    >
+                        ← Previous
+                    </button>
+
+                    {/* Page Numbers */}
+                    <div className="mx-2 flex items-center gap-2">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1)
+                            .filter(
+                                (current) =>
+                                    current >= page - 1 &&
+                                    current <= page + 1
+                            )
+                            .map((current) => (
+                                <button
+                                    key={current}
+                                    onClick={() => setPage(current)}
+                                    className={`
+                    flex h-11 w-11 items-center justify-center rounded-xl
+                    text-sm font-semibold transition-all
+                    ${page === current
+                                            ? "bg-orange-400 text-white shadow-lg shadow-orange-200"
+                                            : "border border-gray-200 bg-white text-gray-700 hover:border-orange-400 hover:bg-orange-50 hover:text-orange-500"
+                                        }
+                `}
+                                >
+                                    {current}
+                                </button>
+                            ))}
+                    </div>
+
+                    {/* Next */}
+                    <button
+                        onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                        disabled={page === totalPages}
+                        className="
+            flex h-11 items-center rounded-xl border border-gray-200
+            px-4 text-sm font-medium transition-all
+            hover:border-orange-400 hover:bg-orange-50 hover:text-orange-500
+            disabled:cursor-not-allowed disabled:opacity-40
+        "
+                    >
+                        Next →
+                    </button>
+                </div>
+
                 <SectionNotch />
 
             </div>
