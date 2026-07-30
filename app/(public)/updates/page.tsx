@@ -35,8 +35,19 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function UpdatesPage() {
-    const products = await getUpdates();
+type Props = {
+    searchParams: Promise<{
+        search?: string;
+    }>;
+};
+
+export default async function UpdatesPage({
+    searchParams,
+}: Props) {
+
+    const { search = "" } = await searchParams;
+
+    const products = await getUpdates(search);
 
     return (
         <>
@@ -61,6 +72,7 @@ export default async function UpdatesPage() {
 
             <Hero
                 products={products}
+                search={search}
             />
         </>
     );

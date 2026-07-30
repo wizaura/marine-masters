@@ -4,19 +4,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import SectionNotch from "../ui/SectionNotch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Loader2, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type Props = {
     products: any[];
+    search: string;
 };
 
 const PAGE_SIZE = 6;
 
 export default function UpdatesGrid({
     products,
+    search,
 }: Props) {
 
     const [page, setPage] = useState(1);
+    const [query, setQuery] = useState(search);
+    const [loading, setLoading] = useState(false);
+
+    const router = useRouter();
 
     const totalPages = Math.ceil(products.length / PAGE_SIZE);
 
@@ -24,6 +32,28 @@ export default function UpdatesGrid({
         (page - 1) * PAGE_SIZE,
         page * PAGE_SIZE
     );
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(true);
+            const params = new URLSearchParams(window.location.search);
+
+            if (query.trim()) {
+                params.set("search", query.trim());
+            } else {
+                params.delete("search");
+            }
+
+            router.replace(`/updates?${params.toString()}`);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [query, router]);
+
+    useEffect(() => {
+        setPage(1);
+        setLoading(false);
+    }, [products]);
 
     return (
         <section className="bg-gray-50 px-4 sm:px-8 py-24">
@@ -49,6 +79,26 @@ export default function UpdatesGrid({
                             {products.length} newly added products.
                         </h2>
 
+                        <div className="relative my-6 max-w-xl">
+                            <Search
+                                size={20}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                            />
+
+                            <input
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Search products..."
+                                className="h-14 w-full rounded-xl border border-gray-200 bg-white pl-12 pr-12 outline-none transition focus:border-orange-400"
+                            />
+    
+                            {loading && (
+                                <Loader2
+                                    size={18}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin text-orange-400"
+                                />
+                            )}
+                        </div>
                         <p
                             className="
                                 mt-8
@@ -65,6 +115,7 @@ export default function UpdatesGrid({
                     </div>
 
                 </div>
+
 
                 <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 

@@ -5,10 +5,12 @@ import UpdatesGrid from "./UpdatesGrid";
 
 type Props = {
     products: any[];
+    search: string;
 };
 
 export default function Hero({
     products,
+    search,
 }: Props) {
     return (
         <section className="bg-white">
@@ -31,7 +33,7 @@ export default function Hero({
                 <div className="absolute -top-12 left-0 h-12 w-full bg-white" />
 
                 <div className="relative z-20 mx-4">
-                    <UpdatesGrid products={products} />
+                    <UpdatesGrid products={products} search={search} />
                 </div>
 
                 <div className="sticky bottom-0 mx-4">
