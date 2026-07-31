@@ -1,14 +1,20 @@
 import { client } from "./client";
 
 export async function getMachineryModelsByBrand(
-    brandId: string
+    brandId: string,
+    search = ""
 ) {
     return client.fetch(
         `
         *[
             _type == "machineryModel" &&
-            brand._ref == $brandId
-        ] | order(name asc) {
+            brand._ref == $brandId &&
+            (
+                $search == "" ||
+                name match "*" + $search + "*"
+            )
+        ]
+        | order(name asc){
             _id,
             name,
             slug,
@@ -20,6 +26,9 @@ export async function getMachineryModelsByBrand(
             }
         }
         `,
-        { brandId }
+        {
+            brandId,
+            search,
+        }
     );
 }

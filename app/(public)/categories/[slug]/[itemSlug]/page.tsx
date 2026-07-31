@@ -16,6 +16,10 @@ type Props = {
         slug: string;
         itemSlug: string;
     }>;
+    searchParams: Promise<{
+        search?: string;
+    }>;
+
 };
 
 export async function generateMetadata({
@@ -130,8 +134,10 @@ export async function generateMetadata({
 
 export default async function CategoryItemPage({
     params,
+    searchParams,
 }: Props) {
     const { slug, itemSlug } = await params;
+    const { search = "" } = await searchParams;
 
     const category = await getCategoryBySlug(slug);
 
@@ -270,6 +276,7 @@ export default async function CategoryItemPage({
                 <>
                     <EngineBrandPage
                         brand={brand}
+                        search={search}
                     />
                     <CTA />
                 </>
@@ -407,6 +414,7 @@ export default async function CategoryItemPage({
                 <>
                     <MachineryTypePage
                         machineryType={machineryType}
+                        search={search}
                     />
                     <CTA />
                 </>

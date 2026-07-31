@@ -3,8 +3,10 @@ import MachineryBrandsSection from "./MachineryBrandSection";
 
 export default function MachineryTypePage({
     machineryType,
+    search,
 }: {
     machineryType: any;
+    search: string;
 }) {
     return (
         <>
@@ -14,6 +16,7 @@ export default function MachineryTypePage({
 
             <MachineryBrandsSection
                 machineryType={machineryType}
+                search={search}
             />
         </>
     );

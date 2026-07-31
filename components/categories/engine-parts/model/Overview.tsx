@@ -1,8 +1,46 @@
+"use client";
+
+import { Loader2, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
+type Props = {
+    model: any;
+    search: string;
+};
+
 export default function EngineModelOverview({
     model,
-}: {
-    model: any;
-}) {
+    search
+}: Props) {
+
+    const router = useRouter();
+
+    const [query, setQuery] = useState(search);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(true);
+
+            const params = new URLSearchParams(window.location.search);
+
+            if (query.trim()) {
+                params.set("search", query.trim());
+            } else {
+                params.delete("search");
+            }
+
+            router.replace(`?${params.toString()}`);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [query, router]);
+
+    useEffect(() => {
+        setLoading(false);
+    }, [search]);
+
     return (
         <section className="bg-white px-8 py-24">
             <div className="mx-auto max-w-8xl">
@@ -14,6 +52,7 @@ export default function EngineModelOverview({
                             Engine Model
                         </p>
                     </div>
+
 
                     <div>
                         <h2
@@ -27,6 +66,40 @@ export default function EngineModelOverview({
                             Genuine spare parts for
                             {` ${model.name}`}.
                         </h2>
+                        
+                    <div className="relative my-6 max-w-xl">
+                        <Search
+                            size={20}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                        />
+
+                        <input
+                            type="search"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="Search engine models..."
+                            className="
+            h-14
+            w-full
+            rounded-xl
+            border
+            border-gray-200
+            bg-white
+            pl-12
+            pr-12
+            outline-none
+            transition
+            focus:border-orange-400
+        "
+                        />
+
+                        {loading && (
+                            <Loader2
+                                size={18}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin text-orange-400"
+                            />
+                        )}
+                    </div>
 
                         <p
                             className="

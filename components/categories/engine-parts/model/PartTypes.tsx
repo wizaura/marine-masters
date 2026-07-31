@@ -3,17 +3,17 @@ import Image from "next/image";
 
 import SideNotch from "@/components/ui/SideNotch";
 
-import { getPartTypesByEngineModel } from "@/sanity/lib/getPartTypesByEngineModel";
 import { urlFor } from "@/sanity/lib/image";
 
 export default async function EngineModelPartTypes({
     itemSlug,
     subItemSlug,
+    partTypes,
 }: {
     itemSlug: string;
     subItemSlug: string;
+    partTypes: any[];
 }) {
-    const partTypes = await getPartTypesByEngineModel(subItemSlug);
 
     return (
         <section className="px-8 pb-24">

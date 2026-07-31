@@ -7,15 +7,18 @@ import Image from "next/image";
 import SideNotch from "@/components/ui/SideNotch";
 import FindMachineryModal from "./FindMachineryModel";
 
-import { getMachineryModelsByBrand } from "@/sanity/lib/getMachineryModelsByBrand";
 import { urlFor } from "@/sanity/lib/image";
+import { Loader2, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function MachineryBrandsGrid({
     brands,
     machineryType,
+    search,
 }: {
     brands: any[];
     machineryType: any;
+    search: string;
 }) {
     const [selectedBrand, setSelectedBrand] =
         useState<any>(null);
@@ -25,6 +28,33 @@ export default function MachineryBrandsGrid({
 
     const [loadingModels, setLoadingModels] =
         useState(false);
+
+    const router = useRouter();
+
+    const [query, setQuery] = useState(search);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(true);
+
+            const params = new URLSearchParams(window.location.search);
+
+            if (query.trim()) {
+                params.set("search", query.trim());
+            } else {
+                params.delete("search");
+            }
+
+            router.replace(`?${params.toString()}`);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [query, router]);
+
+    useEffect(() => {
+        setLoading(false);
+    }, [brands]);
 
     useEffect(() => {
         async function fetchModels() {
@@ -79,6 +109,40 @@ export default function MachineryBrandsGrid({
                                 {machineryType.title.toLowerCase()}
                                 {" "}brands available.
                             </h2>
+
+                            <div className="relative my-6 max-w-xl">
+                                <Search
+                                    size={20}
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                                />
+
+                                <input
+                                    type="search"
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                    placeholder="Search engine models..."
+                                    className="
+            h-14
+            w-full
+            rounded-xl
+            border
+            border-gray-200
+            bg-white
+            pl-12
+            pr-12
+            outline-none
+            transition
+            focus:border-orange-400
+        "
+                                />
+
+                                {loading && (
+                                    <Loader2
+                                        size={18}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin text-orange-400"
+                                    />
+                                )}
+                            </div>
 
                             {machineryType.description && (
                                 <p

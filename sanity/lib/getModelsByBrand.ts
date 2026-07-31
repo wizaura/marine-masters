@@ -1,25 +1,31 @@
 import { client } from "./client";
 
 export async function getModelsByBrand(
-    brandId: string
+    brandId: string,
+    search = ""
 ) {
     return client.fetch(
         `
         *[
             _type == "engineModel" &&
-            brand._ref == $brandId
-        ] | order(name asc) {
+            brand._ref == $brandId &&
+            (
+                $search == "" ||
+                name match "*" + $search + "*"
+            )
+        ]
+        | order(name asc){
             _id,
             name,
             slug,
-
             brand->{
-                _id,
-                name,
                 slug
             }
         }
         `,
-        { brandId }
+        {
+            brandId,
+            search,
+        }
     );
 }

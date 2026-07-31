@@ -12,6 +12,9 @@ interface PageProps {
     params: Promise<{
         slug: string;
     }>;
+    searchParams: Promise<{
+        search?: string;
+    }>;
 }
 
 export async function generateMetadata({
@@ -88,8 +91,10 @@ export async function generateMetadata({
 
 export default async function CategoryDetailPage({
     params,
+    searchParams,
 }: PageProps) {
     const { slug } = await params;
+    const { search = "" } = await searchParams;
 
     const category = await getCategory(slug);
 
@@ -216,6 +221,7 @@ export default async function CategoryDetailPage({
             <>
                 <CategoryDetails
                     category={category}
+                    search={search}
                 />
                 <CTA />
             </>

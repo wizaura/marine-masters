@@ -1,19 +1,50 @@
+"use client";
+
 import Link from "next/link";
 
 import { getModelsByBrand } from "@/sanity/lib/getModelsByBrand";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Loader2, Search } from "lucide-react";
 
 type Props = {
-    brandId: string;
+    models: any[];
     description: string;
+    search: string;
 };
 
-export default async function EngineModelsGrid({
-    brandId,
+export default function EngineModelsGrid({
+    models,
     description,
+    search,
 }: Props) {
-    const models = await getModelsByBrand(
-        brandId
-    );
+
+    const router = useRouter();
+
+    const [query, setQuery] = useState(search);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(true);
+
+            const params = new URLSearchParams(window.location.search);
+
+            if (query.trim()) {
+                params.set("search", query.trim());
+            } else {
+                params.delete("search");
+            }
+
+            router.replace(`?${params.toString()}`);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [query, router]);
+
+    useEffect(() => {
+        setLoading(false);
+    }, [models]);
 
     return (
         <section className="bg-white px-8 py-24">
@@ -38,6 +69,40 @@ export default async function EngineModelsGrid({
                         >
                             {models.length} engine models available.
                         </h2>
+
+                        <div className="relative my-6 max-w-xl">
+                            <Search
+                                size={20}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                            />
+
+                            <input
+                                type="search"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Search engine models..."
+                                className="
+            h-14
+            w-full
+            rounded-xl
+            border
+            border-gray-200
+            bg-white
+            pl-12
+            pr-12
+            outline-none
+            transition
+            focus:border-orange-400
+        "
+                            />
+
+                            {loading && (
+                                <Loader2
+                                    size={18}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin text-orange-400"
+                                />
+                            )}
+                        </div>
 
                         {description && (
                             <p

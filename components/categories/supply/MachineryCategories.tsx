@@ -1,6 +1,9 @@
+import { getMachineryTypes } from "@/sanity/lib/getMachineryTypes";
 import MachineryTypesGrid from "../details/MachineryTypesGrid";
 
 export default async function MachineryCategories() {
+
+    const machineryTypes = await getMachineryTypes();
 
     return (
         <section
@@ -54,7 +57,7 @@ export default async function MachineryCategories() {
 
                 </div>
 
-                <MachineryTypesGrid />
+                <MachineryTypesGrid machineryTypes={machineryTypes} />
 
             </div>
         </section>

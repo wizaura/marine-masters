@@ -3,13 +3,15 @@ import Image from "next/image";
 
 import SideNotch from "@/components/ui/SideNotch";
 
-import { getMachineryTypes } from "@/sanity/lib/getMachineryTypes";
 import { urlFor } from "@/sanity/lib/image";
 
-export default async function MachineryTypesGrid() {
-    const machineryTypes = await getMachineryTypes();
+type Props = {
+    machineryTypes: any[];
+};
 
-    console.log(machineryTypes);
+export default async function MachineryTypesGrid({
+    machineryTypes,
+}: Props) {
 
     return (
         <section className="pb-24 px-8">

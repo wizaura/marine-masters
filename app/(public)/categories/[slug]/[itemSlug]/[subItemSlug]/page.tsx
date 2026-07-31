@@ -136,16 +136,22 @@ type Props = {
         itemSlug: string;
         subItemSlug: string;
     }>;
+    searchParams: Promise<{
+        search?: string;
+    }>;
 };
 
 export default async function CategorySubItemPage({
     params,
+    searchParams,
 }: Props) {
     const {
         slug,
         itemSlug,
         subItemSlug,
     } = await params;
+
+    const { search = "" } = await searchParams;
 
     /**
      * Engine Parts → Model
@@ -292,6 +298,7 @@ export default async function CategorySubItemPage({
                     model={model}
                     itemSlug={itemSlug}
                     subItemSlug={subItemSlug}
+                    search={search}
                 />
 
                 <CTA />
@@ -445,6 +452,7 @@ export default async function CategorySubItemPage({
                 <MachineryBrandPage
                     brand={brand}
                     itemSlug={itemSlug}
+                    search={search}
                 />
 
                 <CTA />
