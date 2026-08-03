@@ -220,7 +220,7 @@ export default function ContactRFQSection() {
                                 </p>
 
                                 <p className="mt-2 text-xl font-medium text-white">
-                                    105, India tower, opposite India House, Ruvapari Road, Bhavnagar, Gujarat, 364001
+                                    Plot no 216, Near old post office, Kumbharwada, Bhavnagar 364001.
                                 </p>
                             </div>
 

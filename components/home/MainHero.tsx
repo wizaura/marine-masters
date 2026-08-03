@@ -81,8 +81,7 @@ export default function HeroSection() {
                 text-white/80
             "
                         >
-                            Delivering genuine marine engine spare parts,
-                            machinery, and worldwide logistics solutions.
+                            Real parts. Real machinery. Delivered anywhere in the world.
                         </p>
 
                     </div>

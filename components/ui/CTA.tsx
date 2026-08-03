@@ -30,11 +30,11 @@ export default function CTA() {
                                 />
                             </div>
 
-                            <h2 className="pb-12 text-[clamp(5rem,14vw,14rem)] font-black leading-none">
+                            <h2 className="text-[clamp(3.5rem,9vw,8rem)] font-black leading-none">
                                 Request a quote
                             </h2>
 
-                            <div className="relative mx-8 h-[180px] w-[180px] shrink-0 overflow-hidden rounded-full">
+                            <div className="relative mx-8 h-[120px] w-[120px] shrink-0 overflow-hidden rounded-full">
                                 <Image
                                     src="/hero-2.avif"
                                     alt=""
@@ -48,11 +48,11 @@ export default function CTA() {
 
                         <div className="flex shrink-0 items-center whitespace-nowrap">
 
-                            <h2 className="text-[clamp(5rem,14vw,14rem)] font-black leading-none">
+                            <h2 className="text-[clamp(3.5rem,9vw,8rem)] font-black leading-none">
                                 Request a quote
                             </h2>
 
-                            <div className="relative mx-8 h-[180px] w-[180px] shrink-0 overflow-hidden rounded-full">
+                            <div className="relative mx-8 h-[120px] w-[120px] shrink-0 overflow-hidden rounded-full">
                                 <Image
                                     src="/hero-2.avif"
                                     alt=""

@@ -161,16 +161,6 @@ export default function RootLayout({
 
               email: "sales@shipsparesworldwide.com",
 
-              address: {
-                "@type": "PostalAddress",
-                streetAddress:
-                  "105, India Tower, Opposite India House, Ruvapari Road",
-                addressLocality: "Bhavnagar",
-                addressRegion: "Gujarat",
-                postalCode: "364001",
-                addressCountry: "IN",
-              },
-
               description:
                 "Marine Masters is a worldwide supplier of engine parts, ship machinery, ship spare parts, OEM components, industrial equipment, and marine automation systems.",
 

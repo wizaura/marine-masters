@@ -74,7 +74,7 @@ export default function ContactInfoSection() {
                                     </p>
 
                                     <p className="text-neutral-600">
-                                        105, India tower, opposite India House, Ruvapari Road, Bhavnagar, Gujarat, 364001
+                                        Plot no 216, Near old post office, Kumbharwada, Bhavnagar 364001.
                                     </p>
 
                                 </div>
