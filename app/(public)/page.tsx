@@ -24,10 +24,10 @@ const homeCategories = [
 ];
 
 export const metadata: Metadata = {
-  title: "Engine Parts, Ship Machinery & Worldwide Ship Spare Supplier",
+  title: "Marine Spare Parts Supplier | Ship Spare Parts & Marine Engine Parts Worldwide",
 
   description:
-    "Marine Masters supplies genuine, OEM, and reconditioned engine parts, ship machinery, pumps, compressors, turbochargers, and marine equipment with worldwide logistics support.",
+    "Marine Masters is a trusted marine spare parts supplier providing ship spare parts, marine engine spare parts, ship machinery, OEM marine components, pumps, turbochargers, compressors, and worldwide delivery for commercial vessels.",
 
   alternates: {
     canonical: "/",
@@ -72,7 +72,7 @@ export default async function Home() {
             name: "Marine Masters",
 
             description:
-              "Worldwide supplier of engine parts, ship machinery and industrial marine equipment.",
+              "Worldwide supplier of marine spare parts, ship spare parts, marine engine spare parts, ship machinery, OEM marine components, and vessel equipment.",
 
             url: "https://shipsparesworldwide.com",
           }),

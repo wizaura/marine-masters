@@ -173,14 +173,20 @@ export default function RootLayout({
               },
 
               knowsAbout: [
-                "Engine Parts",
-                "Ship Machinery",
+                "Marine Spare Parts",
                 "Ship Spare Parts",
-                "Marine Equipment",
-                "OEM Components",
-                "Industrial Machinery",
+                "Marine Engine Spare Parts",
+                "Ship Machinery",
+                "Marine Pumps",
+                "Marine Turbochargers",
+                "Marine Air Compressors",
+                "Marine Purifiers",
+                "Heat Exchangers",
+                "OEM Marine Components",
+                "Genuine Marine Spare Parts",
+                "Worldwide Ship Spare Parts Supply"
               ],
-              
+
 
               sameAs: [
                 // Add LinkedIn, Facebook, Instagram etc.
