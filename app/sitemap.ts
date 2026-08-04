@@ -8,6 +8,8 @@ import { getEngineProductsForSitemap } from "@/sanity/lib/sitemap/getEngineProdu
 import { getMachineryTypesForSitemap } from "@/sanity/lib/sitemap/getMachineryTypesForSitemap";
 import { getMachineryBrandsForSitemap } from "@/sanity/lib/sitemap/getMachineryBrandsForSitemap";
 import { getMachineryProductsForSitemap } from "@/sanity/lib/sitemap/getMachineryProductsForSitemap";
+import { regions } from "@/lib/regions";
+import { countries } from "@/lib/countries";
 
 const BASE_URL = "https://shipsparesworldwide.com";
 
@@ -128,6 +130,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
     }));
 
+    const regionUrls = Object.values(regions).map((region) => ({
+        url: `${BASE_URL}/regions/${region.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+    }));
+
+    const countryUrls = Object.values(countries).map((country) => ({
+        url: `${BASE_URL}/countries/${country.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+    }));
+
     return [
         ...staticPages,
         ...categoryPages,
@@ -138,5 +154,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...machineryTypePages,
         ...machineryBrandPages,
         ...machineryProductPages,
+        ...regionUrls,
+        ...countryUrls,
     ];
 }
