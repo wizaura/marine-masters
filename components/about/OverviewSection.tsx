@@ -18,11 +18,11 @@ export default function OverviewSection() {
                     <div>
                         <p
                             className="
-                                text-xl
-                                md:text-2xl
-                                font-medium
-                                text-neutral-500
-                            "
+                text-xl
+                md:text-2xl
+                font-medium
+                text-neutral-500
+            "
                         >
                             Company Overview
                         </p>
@@ -30,36 +30,74 @@ export default function OverviewSection() {
 
                     {/* Right */}
                     <div>
+
                         <h1
                             className="
-            text-3xl
-            md:text-5xl
-            lg:text-6xl
-            font-bold
-            leading-[1.05]
-            tracking-tight
-        "
+                text-3xl
+                md:text-5xl
+                lg:text-6xl
+                font-bold
+                leading-[1.05]
+                tracking-tight
+            "
                         >
-                            <span className="text-orange-400">Marine Masters</span> is a trusted supplier
-                            of marine engine spare parts, ship machinery, and critical marine
-                            equipment for vessels operating worldwide.
+                            <span className="text-orange-400">
+                                Marine Masters
+                            </span>{" "}
+                            is an India-based global supplier of marine spare parts,
+                            ship spare parts, marine engine spare parts, ship
+                            machinery, and OEM marine components serving the
+                            international maritime industry.
                         </h1>
 
                         <div
                             className="
-            mt-10
-            max-w-4xl
-            text-lg
-            leading-relaxed
-            text-neutral-600
-        "
+                mt-10
+                max-w-4xl
+                text-lg
+                leading-relaxed
+                text-neutral-600
+            "
                         >
-                            With a focus on reliability, availability, and fast response times, we help customers source genuine, OEM, and quality reconditioned parts for a wide range of marine engines and onboard machinery. Our extensive network and industry expertise enable us to support routine maintenance, emergency repairs, and complete vessel overhauls with dependable supply solutions.<br/><br/>
+                            Marine Masters supplies genuine, OEM, compatible
+                            replacement, and reconditioned marine spare parts for
+                            commercial shipping companies, ship owners, ship
+                            management companies, shipyards, offshore operators,
+                            marine service providers, and procurement professionals
+                            across Europe, the Middle East, Asia-Pacific, North
+                            America, and Africa. Our focus is on delivering reliable
+                            sourcing solutions that reduce procurement delays and
+                            keep vessels operating efficiently.
 
-                            From engine components and turbocharger parts to pumps, compressors, separators, deck equipment, and auxiliary machinery, Marine Masters provides access to a comprehensive range of products designed to keep vessels operating safely and efficiently.<br/><br/>
+                            <br />
+                            <br />
 
-                            Our commitment is simple: deliver the right marine parts at the right time, minimize operational downtime, and support the global maritime industry with professional service and worldwide logistics capabilities.
+                            Our product portfolio includes marine engine spare
+                            parts, main engine spare parts, auxiliary engine spare
+                            parts, turbocharger spare parts, marine pump spare
+                            parts, purifier spares, marine air compressor spare
+                            parts, fuel injection equipment, cylinder liners,
+                            piston rings, engine bearings, heat exchangers,
+                            exhaust valve spindles, engine overhaul kits, and a
+                            comprehensive range of ship machinery and marine
+                            equipment from leading global manufacturers including
+                            MAN B&W, Wärtsilä, Sulzer, Mitsubishi, Yanmar,
+                            Daihatsu, Bergen, ABB, Alfa Laval, Allweiler,
+                            Grundfos, DESMI, IMO, KSB, Mitsubishi MET, and
+                            many more.
+
+                            <br />
+                            <br />
+
+                            Whether supporting planned maintenance, emergency
+                            vessel repairs, or dry dock projects, Marine Masters
+                            combines technical expertise, responsive customer
+                            service, competitive quotations, and worldwide
+                            logistics to deliver dependable marine spare parts
+                            solutions for fleets operating across major shipping
+                            routes and international ports.
                         </div>
+
                     </div>
 
                 </div>

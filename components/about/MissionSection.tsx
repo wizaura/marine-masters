@@ -18,11 +18,11 @@ export default function MissionSection() {
                     <div>
                         <p
                             className="
-                                text-xl
-                                md:text-2xl
-                                font-medium
-                                text-neutral-500
-                            "
+            text-xl
+            md:text-2xl
+            font-medium
+            text-neutral-500
+        "
                         >
                             Mission and Vision
                         </p>
@@ -33,71 +33,72 @@ export default function MissionSection() {
                         <div>
                             <h2
                                 className="
-            max-w-5xl
-            text-2xl
-            font-bold
-            leading-tight
-            md:text-4xl
-            lg:text-5xl
-        "
+                max-w-5xl
+                text-2xl
+                font-bold
+                leading-tight
+                md:text-4xl
+                lg:text-5xl
+            "
                             >
-                                Our mission is to provide reliable access
-                                to marine engine parts, ship machinery,
-                                and technical solutions that help keep
-                                vessels operating safely, efficiently,
-                                and without unnecessary downtime.
+                                Our mission is to supply high-quality marine spare parts,
+                                ship spare parts, marine engine spare parts, and ship
+                                machinery that help ship owners, shipyards, and marine
+                                service companies keep vessels operating safely,
+                                efficiently, and with minimal downtime.
                             </h2>
 
                             <div
                                 className="
-            mt-10
-            max-w-4xl
-            space-y-6
-            text-lg
-            leading-relaxed
-            text-neutral-600
-        "
+                mt-10
+                max-w-4xl
+                space-y-6
+                text-lg
+                leading-relaxed
+                text-neutral-600
+            "
                             >
                                 <p>
-                                    We are committed to supporting the
-                                    maritime industry with dependable
-                                    products, responsive service, and
-                                    efficient global supply solutions.
-                                    By connecting vessel operators,
-                                    shipyards, and marine service
-                                    companies with trusted marine
-                                    equipment and spare parts, we help
-                                    ensure operational continuity
-                                    wherever our customers operate.
+                                    Marine Masters is committed to delivering reliable
+                                    marine spare parts, OEM marine components, and
+                                    vessel spare parts backed by responsive customer
+                                    service and efficient worldwide logistics. We support
+                                    commercial shipping companies, fleet operators,
+                                    offshore operators, shipyards, and marine procurement
+                                    professionals with dependable sourcing solutions for
+                                    planned maintenance, emergency repairs, and dry dock
+                                    projects.
                                 </p>
 
                                 <p>
-                                    Our vision is to become a trusted
-                                    global partner for marine procurement,
-                                    recognized for reliability, technical
-                                    expertise, and long-term customer
-                                    relationships. We strive to simplify
-                                    the sourcing process while delivering
-                                    value, quality, and confidence to the
-                                    maritime sector.
+                                    Our vision is to become a globally trusted marine
+                                    spare parts supplier, recognized for technical
+                                    expertise, product quality, and long-term customer
+                                    partnerships. We continuously expand our portfolio of
+                                    marine engine spare parts, auxiliary engine spare
+                                    parts, ship machinery, and OEM replacement components
+                                    to simplify procurement and deliver greater value to
+                                    customers worldwide.
                                 </p>
 
                                 <p>
-                                    From engine spares and turbocharger
-                                    components to pumps, compressors,
-                                    separators, and deck machinery,
-                                    we source and deliver reliable marine
-                                    equipment for ship owners, operators,
-                                    and marine service companies across
-                                    global shipping routes.
+                                    From MAN B&W, Wärtsilä, Sulzer, Mitsubishi, and
+                                    Yanmar engine spare parts to turbocharger spare
+                                    parts, marine pump spare parts, purifier spares,
+                                    marine air compressor spare parts, heat exchangers,
+                                    and complete ship machinery solutions, Marine Masters
+                                    provides reliable worldwide ship spares delivery for
+                                    commercial vessels, offshore fleets, and marine
+                                    industries across Europe, the Middle East,
+                                    Asia-Pacific, North America, and Africa.
                                 </p>
                             </div>
                         </div>
-                    </div>
-
                 </div>
 
             </div>
-        </section>
+
+        </div>
+        </section >
     );
 }
