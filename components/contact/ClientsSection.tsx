@@ -4,74 +4,170 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactRFQSection() {
+    const [name, setName] = useState("");
+    const [company, setCompany] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [country, setCountry] = useState("");
+    const [quantity, setQuantity] = useState("");
+    const [productRequired, setProductRequired] = useState("");
+    const [message, setMessage] = useState("");
 
-    const [name, setName] =
-        useState("");
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState("");
 
-    const [company, setCompany] =
-        useState("");
+    const [errors, setErrors] = useState<{
+        name?: string;
+        company?: string;
+        email?: string;
+        phone?: string;
+        message?: string;
+    }>({});
 
-    const [email, setEmail] =
-        useState("");
+    /* ==========================
+       VALIDATION
+    ========================== */
 
-    const [phone, setPhone] =
-        useState("");
+    const validateForm = () => {
+        const newErrors: typeof errors = {};
 
-    const [country, setCountry] =
-        useState("");
+        const cleanName = name.trim();
+        const cleanCompany = company.trim();
+        const cleanEmail = email.trim();
+        const cleanPhone = phone.trim();
+        const cleanMessage = message.trim();
 
-    const [quantity, setQuantity] =
-        useState("");
+        /* Name */
 
-    const [productRequired, setProductRequired] =
-        useState("");
+        if (!cleanName) {
+            newErrors.name = "Please enter your name.";
+        } else if (cleanName.length < 2) {
+            newErrors.name =
+                "Name must be at least 2 characters.";
+        }
 
-    const [message, setMessage] =
-        useState("");
+        /* Company */
 
-    const [loading, setLoading] =
-        useState(false);
+        if (!cleanCompany) {
+            newErrors.company =
+                "Please enter your company name.";
+        } else if (cleanCompany.length < 2) {
+            newErrors.company =
+                "Company name must be at least 2 characters.";
+        }
 
-    const [success, setSuccess] =
-        useState(false);
+        /* Email */
 
-    const [error, setError] =
-        useState("");
+        if (!cleanEmail) {
+            newErrors.email =
+                "Please enter your email address.";
+        } else {
+            const emailRegex =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(cleanEmail)) {
+                newErrors.email =
+                    "Please enter a valid email address.";
+            }
+        }
+
+        /* Phone - optional */
+
+        if (cleanPhone) {
+            const phoneDigits =
+                cleanPhone.replace(/\D/g, "");
+
+            if (
+                phoneDigits.length < 7 ||
+                phoneDigits.length > 15
+            ) {
+                newErrors.phone =
+                    "Please enter a valid phone number.";
+            }
+        }
+
+        /* Message */
+
+        if (!cleanMessage) {
+            newErrors.message =
+                "Please describe your requirement.";
+        } else if (cleanMessage.length < 10) {
+            newErrors.message =
+                "Please provide a little more detail about your requirement.";
+        }
+
+        setErrors(newErrors);
+
+        return Object.keys(newErrors).length === 0;
+    };
+
+    /* ==========================
+       SUBMIT
+    ========================== */
 
     const handleSubmit = async (
         e: React.FormEvent
     ) => {
         e.preventDefault();
 
-        setLoading(true);
-        setError("");
         setSuccess(false);
+        setError("");
+
+        /* Validate before EmailJS */
+
+        const isValid = validateForm();
+
+        if (!isValid) {
+            return;
+        }
+
+        setLoading(true);
 
         try {
             const templateParams = {
-                name,
-                company,
-                email,
-                phone,
-                country,
-                quantity,
-                productRequired,
-                message,
+                name: name.trim(),
+                company: company.trim(),
+                email: email.trim(),
+                phone: phone.trim(),
+                country: country.trim(),
+                quantity: quantity.trim(),
+                productRequired:
+                    productRequired.trim(),
+                message: message.trim(),
             };
 
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID!,
-                templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            );
+            /* ==========================
+               ADMIN EMAIL
+            ========================== */
 
             await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_CUSTOMER_TEMPLATE_ID!,
+                process.env
+                    .NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env
+                    .NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID!,
                 templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+                process.env
+                    .NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             );
+
+            /* ==========================
+               CUSTOMER EMAIL
+            ========================== */
+
+            await emailjs.send(
+                process.env
+                    .NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env
+                    .NEXT_PUBLIC_EMAILJS_CUSTOMER_TEMPLATE_ID!,
+                templateParams,
+                process.env
+                    .NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+
+            /* ==========================
+               SUCCESS
+            ========================== */
 
             setSuccess(true);
 
@@ -83,7 +179,13 @@ export default function ContactRFQSection() {
             setQuantity("");
             setProductRequired("");
             setMessage("");
+            setErrors({});
         } catch (err) {
+            console.error(
+                "RFQ submission failed:",
+                err
+            );
+
             setError(
                 "Something went wrong. Please try again."
             );
@@ -91,9 +193,9 @@ export default function ContactRFQSection() {
             setLoading(false);
         }
     };
+
     return (
         <section className="px-4 pb-12">
-
             <div
                 className="
                     mx-auto
@@ -105,10 +207,12 @@ export default function ContactRFQSection() {
                     bg-black
                 "
             >
-
                 <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
 
-                    {/* Left */}
+                    {/* ==========================
+                        LEFT
+                    ========================== */}
+
                     <div
                         className="
                             flex
@@ -118,7 +222,6 @@ export default function ContactRFQSection() {
                             lg:p-16
                         "
                     >
-
                         <div>
 
                             <p
@@ -166,39 +269,35 @@ export default function ContactRFQSection() {
 
                                 <div
                                     className="
-            rounded-full
-            border
-            border-white/10
-            bg-white/5
-            px-4
-            py-2
-            text-sm
-            text-white/80
-        "
+                                        rounded-full
+                                        border
+                                        border-white/10
+                                        bg-white/5
+                                        px-4
+                                        py-2
+                                        text-sm
+                                        text-white/80
+                                    "
                                 >
                                     ✓ Genuine & OEM Parts
                                 </div>
 
                                 <div
                                     className="
-            rounded-full
-            border
-            border-white/10
-            bg-white/5
-            px-4
-            py-2
-            text-sm
-            text-white/80
-        "
+                                        rounded-full
+                                        border
+                                        border-white/10
+                                        bg-white/5
+                                        px-4
+                                        py-2
+                                        text-sm
+                                        text-white/80
+                                    "
                                 >
                                     ✓ Fast Global Delivery
                                 </div>
 
                             </div>
-
-                        </div>
-
-                        <div className="mt-8 space-y-6">
 
                         </div>
 
@@ -220,15 +319,18 @@ export default function ContactRFQSection() {
                                 </p>
 
                                 <p className="mt-2 text-xl font-medium text-white">
-                                    Plot no 216, Near old post office, Kumbharwada, Bhavnagar 364001.
+                                    Plot no 216, Near old post office,
+                                    Kumbharwada, Bhavnagar 364001.
                                 </p>
                             </div>
 
                         </div>
-
                     </div>
 
-                    {/* Right */}
+                    {/* ==========================
+                        RIGHT
+                    ========================== */}
+
                     <div
                         className="
                             bg-white
@@ -237,133 +339,220 @@ export default function ContactRFQSection() {
                         "
                     >
 
-                        <form onSubmit={handleSubmit} className="grid gap-5">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="grid gap-5"
+                            noValidate
+                        >
+
+                            {/* Name */}
 
                             <div>
-
-                                <label className="mb-2 block text-sm font-semibold">
+                                <label
+                                    htmlFor="name"
+                                    className="mb-2 block text-sm font-semibold"
+                                >
                                     Full Name *
                                 </label>
 
                                 <input
+                                    id="name"
                                     type="text"
                                     value={name}
-                                    onChange={(e) =>
-                                        setName(e.target.value)
-                                    }
+                                    onChange={(e) => {
+                                        setName(e.target.value);
+
+                                        if (errors.name) {
+                                            setErrors((prev) => ({
+                                                ...prev,
+                                                name: undefined,
+                                            }));
+                                        }
+                                    }}
                                     placeholder="Your Name"
-                                    className="
+                                    className={`
                                         w-full
                                         rounded-2xl
                                         border
-                                        border-neutral-200
                                         px-5
                                         py-4
                                         outline-none
                                         transition
-                                        focus:border-orange-400
-                                    "
+                                        ${
+                                            errors.name
+                                                ? "border-red-400 focus:border-red-500"
+                                                : "border-neutral-200 focus:border-orange-400"
+                                        }
+                                    `}
                                 />
 
+                                {errors.name && (
+                                    <p className="mt-2 text-sm text-red-500">
+                                        {errors.name}
+                                    </p>
+                                )}
                             </div>
 
-                            <div>
+                            {/* Company */}
 
-                                <label className="mb-2 block text-sm font-semibold">
+                            <div>
+                                <label
+                                    htmlFor="company"
+                                    className="mb-2 block text-sm font-semibold"
+                                >
                                     Company *
                                 </label>
 
                                 <input
+                                    id="company"
                                     type="text"
                                     value={company}
-                                    onChange={(e) =>
-                                        setCompany(e.target.value)
-                                    }
+                                    onChange={(e) => {
+                                        setCompany(e.target.value);
+
+                                        if (errors.company) {
+                                            setErrors((prev) => ({
+                                                ...prev,
+                                                company: undefined,
+                                            }));
+                                        }
+                                    }}
                                     placeholder="Your Company"
-                                    className="
+                                    className={`
                                         w-full
                                         rounded-2xl
                                         border
-                                        border-neutral-200
                                         px-5
                                         py-4
                                         outline-none
                                         transition
-                                        focus:border-orange-400
-                                    "
+                                        ${
+                                            errors.company
+                                                ? "border-red-400 focus:border-red-500"
+                                                : "border-neutral-200 focus:border-orange-400"
+                                        }
+                                    `}
                                 />
 
+                                {errors.company && (
+                                    <p className="mt-2 text-sm text-red-500">
+                                        {errors.company}
+                                    </p>
+                                )}
                             </div>
+
+                            {/* Email + Phone */}
 
                             <div className="grid gap-5 md:grid-cols-2">
 
                                 <div>
-
-                                    <label className="mb-2 block text-sm font-semibold">
+                                    <label
+                                        htmlFor="email"
+                                        className="mb-2 block text-sm font-semibold"
+                                    >
                                         Email *
                                     </label>
 
                                     <input
+                                        id="email"
                                         type="email"
                                         value={email}
-                                        onChange={(e) =>
-                                            setEmail(e.target.value)
-                                        }
+                                        onChange={(e) => {
+                                            setEmail(e.target.value);
+
+                                            if (errors.email) {
+                                                setErrors((prev) => ({
+                                                    ...prev,
+                                                    email: undefined,
+                                                }));
+                                            }
+                                        }}
                                         placeholder="youremail@example.com"
-                                        className="
+                                        className={`
                                             w-full
                                             rounded-2xl
                                             border
-                                            border-neutral-200
                                             px-5
                                             py-4
                                             outline-none
                                             transition
-                                            focus:border-orange-400
-                                        "
+                                            ${
+                                                errors.email
+                                                    ? "border-red-400 focus:border-red-500"
+                                                    : "border-neutral-200 focus:border-orange-400"
+                                            }
+                                        `}
                                     />
 
+                                    {errors.email && (
+                                        <p className="mt-2 text-sm text-red-500">
+                                            {errors.email}
+                                        </p>
+                                    )}
                                 </div>
 
                                 <div>
-
-                                    <label className="mb-2 block text-sm font-semibold">
+                                    <label
+                                        htmlFor="phone"
+                                        className="mb-2 block text-sm font-semibold"
+                                    >
                                         Phone
                                     </label>
 
                                     <input
-                                        type="text"
+                                        id="phone"
+                                        type="tel"
                                         value={phone}
-                                        onChange={(e) =>
-                                            setPhone(e.target.value)
-                                        }
+                                        onChange={(e) => {
+                                            setPhone(e.target.value);
+
+                                            if (errors.phone) {
+                                                setErrors((prev) => ({
+                                                    ...prev,
+                                                    phone: undefined,
+                                                }));
+                                            }
+                                        }}
                                         placeholder="+1 000 000 0000"
-                                        className="
+                                        className={`
                                             w-full
                                             rounded-2xl
                                             border
-                                            border-neutral-200
                                             px-5
                                             py-4
                                             outline-none
                                             transition
-                                            focus:border-orange-400
-                                        "
+                                            ${
+                                                errors.phone
+                                                    ? "border-red-400 focus:border-red-500"
+                                                    : "border-neutral-200 focus:border-orange-400"
+                                            }
+                                        `}
                                     />
 
+                                    {errors.phone && (
+                                        <p className="mt-2 text-sm text-red-500">
+                                            {errors.phone}
+                                        </p>
+                                    )}
                                 </div>
 
                             </div>
 
+                            {/* Country + Quantity */}
+
                             <div className="grid gap-5 md:grid-cols-2">
 
                                 <div>
-
-                                    <label className="mb-2 block text-sm font-semibold">
+                                    <label
+                                        htmlFor="country"
+                                        className="mb-2 block text-sm font-semibold"
+                                    >
                                         Country
                                     </label>
 
                                     <input
+                                        id="country"
                                         type="text"
                                         value={country}
                                         onChange={(e) =>
@@ -382,16 +571,18 @@ export default function ContactRFQSection() {
                                             focus:border-orange-400
                                         "
                                     />
-
                                 </div>
 
                                 <div>
-
-                                    <label className="mb-2 block text-sm font-semibold">
+                                    <label
+                                        htmlFor="quantity"
+                                        className="mb-2 block text-sm font-semibold"
+                                    >
                                         Quantity
                                     </label>
 
                                     <input
+                                        id="quantity"
                                         type="text"
                                         value={quantity}
                                         onChange={(e) =>
@@ -410,22 +601,28 @@ export default function ContactRFQSection() {
                                             focus:border-orange-400
                                         "
                                     />
-
                                 </div>
 
                             </div>
 
-                            <div>
+                            {/* Product */}
 
-                                <label className="mb-2 block text-sm font-semibold">
+                            <div>
+                                <label
+                                    htmlFor="productRequired"
+                                    className="mb-2 block text-sm font-semibold"
+                                >
                                     Part / Product Required
                                 </label>
 
                                 <input
+                                    id="productRequired"
                                     type="text"
                                     value={productRequired}
                                     onChange={(e) =>
-                                        setProductRequired(e.target.value)
+                                        setProductRequired(
+                                            e.target.value
+                                        )
                                     }
                                     placeholder="e.g. Woodward 8521-076 governor, Alfa Laval MAPX-204"
                                     className="
@@ -440,36 +637,57 @@ export default function ContactRFQSection() {
                                         focus:border-orange-400
                                     "
                                 />
-
                             </div>
 
-                            <div>
+                            {/* Message */}
 
-                                <label className="mb-2 block text-sm font-semibold">
+                            <div>
+                                <label
+                                    htmlFor="message"
+                                    className="mb-2 block text-sm font-semibold"
+                                >
                                     Message *
                                 </label>
 
                                 <textarea
+                                    id="message"
                                     rows={6}
                                     value={message}
-                                    onChange={(e) =>
-                                        setMessage(e.target.value)
-                                    }
+                                    onChange={(e) => {
+                                        setMessage(e.target.value);
+
+                                        if (errors.message) {
+                                            setErrors((prev) => ({
+                                                ...prev,
+                                                message: undefined,
+                                            }));
+                                        }
+                                    }}
                                     placeholder="Tell us your requirement, vessel details, engine model, part number, urgency, destination port, etc."
-                                    className="
+                                    className={`
                                         w-full
                                         rounded-2xl
                                         border
-                                        border-neutral-200
                                         px-5
                                         py-4
                                         outline-none
                                         transition
-                                        focus:border-orange-400
-                                    "
+                                        ${
+                                            errors.message
+                                                ? "border-red-400 focus:border-red-500"
+                                                : "border-neutral-200 focus:border-orange-400"
+                                        }
+                                    `}
                                 />
 
+                                {errors.message && (
+                                    <p className="mt-2 text-sm text-red-500">
+                                        {errors.message}
+                                    </p>
+                                )}
                             </div>
+
+                            {/* Submit */}
 
                             <button
                                 type="submit"
@@ -484,12 +702,16 @@ export default function ContactRFQSection() {
                                     text-white
                                     transition
                                     hover:bg-orange-500
+                                    disabled:cursor-not-allowed
+                                    disabled:opacity-60
                                 "
                             >
                                 {loading
                                     ? "Sending..."
                                     : "Send Inquiry"}
                             </button>
+
+                            {/* Success */}
 
                             {success && (
                                 <p className="text-green-600">
@@ -498,6 +720,8 @@ export default function ContactRFQSection() {
                                 </p>
                             )}
 
+                            {/* Error */}
+
                             {error && (
                                 <p className="text-red-600">
                                     {error}
@@ -505,13 +729,9 @@ export default function ContactRFQSection() {
                             )}
 
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
-        </section >
+        </section>
     );
 }

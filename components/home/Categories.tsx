@@ -2,10 +2,10 @@ import Link from "next/link";
 import SideNotch from "../ui/SideNotch";
 
 interface HomeCategory {
-  title: string;
-  description: string;
-  image: string;
-  slug: string;
+    title: string;
+    description: string;
+    image: string;
+    slug: string;
 }
 
 type Props = {
@@ -46,8 +46,8 @@ export default function HomeCategories({
                             "
                         >
                             Marine spare parts and
-                            machinery solutions for
-                            vessels worldwide.
+                            machinery solutions from India
+                            for global shipping operations.
                         </h2>
                     </div>
 

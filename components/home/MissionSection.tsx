@@ -32,35 +32,63 @@ export default function MissionSection() {
                     <div>
                         <h2
                             className="
-            text-3xl
-            md:text-5xl
-            lg:text-6xl
-            font-bold
-            leading-[1.05]
-            tracking-tight
-        "
+                                text-3xl
+                                md:text-5xl
+                                lg:text-6xl
+                                font-bold
+                                leading-[1.05]
+                                tracking-tight
+                            "
                         >
-                            We <span className="text-orange-400">Marine Masters</span> supply genuine marine engine parts,
-                            ship machinery, and critical components
-                            to keep vessels operating efficiently,
-                            reduce downtime, and support maritime
-                            operations worldwide.
+                            We are{" "}
+                            <span className="text-orange-400">
+                                Marine Masters
+                            </span>
+                            , supplying marine spare parts,
+                            marine engine components, ship machinery,
+                            and critical equipment to keep vessels
+                            operating efficiently and reliably.
                         </h2>
 
                         <div
                             className="
-            mt-10
-            max-w-2xl
-            text-lg
-            leading-relaxed
-            text-neutral-600
-        "
+                                mt-10
+                                max-w-4xl
+                                text-lg
+                                leading-relaxed
+                                text-neutral-600
+                            "
                         >
-                            From engine spares and turbocharger components
-                            to pumps, compressors, and deck machinery,
-                            we source and deliver reliable marine equipment
-                            for ship owners, operators, and marine service
-                            companies across global shipping routes.
+                            From main engine and auxiliary engine spare
+                            parts to crankshafts, cylinder liners,
+                            piston rings, engine bearings, fuel injection
+                            components, exhaust valve spindles, and
+                            turbocharger spare parts, we help ship owners,
+                            fleet operators, ship management companies,
+                            shipyards, and marine service providers source
+                            the components they need for vessel maintenance
+                            and repairs.
+
+                            <br />
+                            <br />
+
+                            Our marine machinery supply also covers pumps,
+                            compressors, purifiers, separators,
+                            heat exchangers, and other critical onboard
+                            equipment. We support genuine, OEM, compatible,
+                            and reconditioned marine components from
+                            established manufacturers, helping customers
+                            reduce procurement delays and vessel downtime.
+
+                            <br />
+                            <br />
+
+                            Marine Masters combines technical sourcing,
+                            competitive quotations, and worldwide ship
+                            spares delivery to support planned maintenance,
+                            emergency repairs, dry dock projects, and
+                            complete vessel overhauls across major
+                            international shipping markets.
                         </div>
                     </div>
 

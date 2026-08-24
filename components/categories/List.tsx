@@ -25,7 +25,8 @@ export default function CategoriesList({
 
           <div>
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
-              Explore our engine parts and machinery categories.
+              Explore marine spare parts, engine components, and
+              ship machinery categories.
             </h2>
           </div>
         </div>

@@ -32,7 +32,7 @@ export default function LogisticsNetworkSection() {
                         z-10
                         mx-auto
                         flex
-                        max-w-4xl
+                        max-w-5xl
                         flex-col
                         items-center
                         px-6
@@ -42,7 +42,7 @@ export default function LogisticsNetworkSection() {
                 >
                     <h2
                         className="
-        max-w-4xl
+        max-w-5xl
         text-3xl
         font-bold
         leading-tight
@@ -52,28 +52,29 @@ export default function LogisticsNetworkSection() {
                     >
                         Supplying genuine{" "}
                         <span className="text-orange-300">
-                            marine engine parts
+                            marine spare parts
                         </span>
                         <br />
-                        and industrial machinery
+                        marine engine components
                         <br />
-                        to vessels worldwide
+                        and ship machinery from India
                     </h2>
 
                     <p
                         className="
         mt-5
-        max-w-3xl
+        max-w-4xl
         text-lg
         font-medium
         text-white
         md:text-xl
     "
                     >
-                        From critical engine components to complete marine
-                        machinery solutions, we help ship owners, operators,
-                        and marine service companies source reliable equipment
-                        with fast global delivery.
+                        From marine engine spare parts and crankshafts to pumps,
+                        turbochargers, compressors, and ship machinery, we help ship
+                        owners, fleet operators, shipyards, and marine service companies
+                        source reliable components from India with efficient international
+                        delivery.
                     </p>
 
                     <Link
@@ -97,7 +98,7 @@ export default function LogisticsNetworkSection() {
 
                 {/* Map */}
                 {/* Space between content and map */}
-                <div className="h-4 md:h-32 lg:h-40" />
+                <div className="h-4 md:h-12" />
 
                 {/* Map */}
                 <div className="w-full px-4">
