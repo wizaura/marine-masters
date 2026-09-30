@@ -1,46 +1,146 @@
 import Link from "next/link";
 
+type Product = {
+    name: string;
+    description: string;
+    href: string;
+};
+
 type Props = {
-    products: string[];
+    products: Product[];
 };
 
 export default function CountryProducts({
     products,
 }: Props) {
     return (
-        <section className="py-20">
-            <div className="mx-auto max-w-7xl px-6">
+        <section className="bg-neutral-50 py-20 sm:py-24">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                 <div className="max-w-4xl">
-                    <h2 className="text-4xl font-bold">
+                    <span
+                        className="
+                            text-sm
+                            font-semibold
+                            uppercase
+                            tracking-[0.16em]
+                            text-orange-500
+                        "
+                    >
+                        What We Supply
+                    </span>
+
+                    <h2
+                        className="
+                            mt-3
+                            text-3xl
+                            font-bold
+                            tracking-tight
+                            text-neutral-950
+                            sm:text-4xl
+                        "
+                    >
                         Marine Spare Parts & Ship Machinery We Supply
                     </h2>
 
-                    <p className="mt-5 text-lg leading-8 text-neutral-600">
-                        Marine Masters supplies a comprehensive range of marine
-                        spare parts, ship spare parts, engine components, and
-                        ship machinery to support commercial vessels, offshore
-                        operators, and shipyards worldwide.
+                    <p
+                        className="
+                            mt-5
+                            text-base
+                            leading-8
+                            text-neutral-600
+                            sm:text-lg
+                        "
+                    >
+                        Marine Masters supplies marine engine spare parts,
+                        ship machinery components, and replacement parts for
+                        vessel maintenance, repairs, dry-dock projects, and
+                        other marine procurement requirements.
                     </p>
                 </div>
 
-                <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    className="
+                        mt-12
+                        grid
+                        gap-5
+                        sm:grid-cols-2
+                        lg:grid-cols-3
+                        xl:grid-cols-4
+                    "
+                >
                     {products.map((product) => (
-                        <div
-                            key={product}
+                        <Link
+                            key={product.name}
+                            href={product.href}
                             className="
-                                rounded-xl
-                                border border-gray-300
+                                group
+                                rounded-2xl
+                                border
+                                border-neutral-200
                                 bg-white
-                                p-5
-                                hover:border-orange-600
-                                transition-colors
+                                p-6
+                                transition
+                                duration-300
+                                hover:-translate-y-1
+                                hover:border-orange-300
+                                hover:shadow-lg
                             "
                         >
-                            <span className="font-medium">
-                                {product}
+                            <div
+                                className="
+                                    flex
+                                    h-10
+                                    w-10
+                                    items-center
+                                    justify-center
+                                    rounded-lg
+                                    bg-orange-50
+                                    text-orange-500
+                                    transition
+                                    group-hover:bg-orange-500
+                                    group-hover:text-white
+                                "
+                            >
+                                <span className="text-lg">→</span>
+                            </div>
+
+                            <h3
+                                className="
+                                    mt-5
+                                    text-lg
+                                    font-semibold
+                                    text-neutral-950
+                                "
+                            >
+                                {product.name}
+                            </h3>
+
+                            <p
+                                className="
+                                    mt-3
+                                    text-sm
+                                    leading-6
+                                    text-neutral-600
+                                "
+                            >
+                                {product.description}
+                            </p>
+
+                            <span
+                                className="
+                                    mt-5
+                                    inline-flex
+                                    text-sm
+                                    font-semibold
+                                    text-orange-600
+                                    transition
+                                    group-hover:text-orange-500
+                                "
+                            >
+                                View Category →
                             </span>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
@@ -49,16 +149,19 @@ export default function CountryProducts({
                         href="/categories"
                         className="
                             inline-flex
+                            items-center
+                            justify-center
                             rounded-lg
-                            bg-black
-                            hover:bg-orange-400
+                            bg-neutral-950
                             px-6
                             py-3
+                            font-semibold
                             text-white
-                            font-medium
+                            transition
+                            hover:bg-orange-500
                         "
                     >
-                        Browse Product Categories
+                        Browse All Marine Spare Parts
                     </Link>
                 </div>
 

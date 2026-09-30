@@ -1,24 +1,24 @@
 import { allRegions } from "../regions/all-regions";
 
-export const germany = {
-    slug: "germany",
+export const uk = {
+    slug: "uk",
 
-    name: "Germany",
+    name: "United Kingdom",
 
-    flag: "🇩🇪",
+    flag: "🇬🇧",
 
     metaTitle:
-        "Marine Spare Parts Supplier in Germany | Ship Engine & Machinery Parts",
+        "Marine Spare Parts Supplier in UK | Ship Engine & Machinery Parts",
 
     metaDescription:
-        "Marine Masters supplies marine spare parts, marine engine parts, ship machinery, turbocharger parts, pump spares and OEM marine components to vessels, shipyards and marine service companies across Germany.",
+        "Marine Masters supplies marine spare parts, marine engine parts, ship machinery, turbocharger parts, pump spares and OEM marine components to vessels, shipyards and marine service companies across the UK.",
 
     hero: {
         title:
-            "Marine Spare Parts Supplier in Germany",
+            "Marine Spare Parts Supplier in the UK",
 
         description:
-            "Source marine engine spare parts, ship machinery, turbocharger components, pump spares and other marine equipment for vessels operating in Germany. Send your manufacturer, model or part number to Marine Masters for a quotation.",
+            "Source marine engine spare parts, ship machinery, turbocharger components, pump spares and other marine equipment for vessels operating in the UK. Send your manufacturer, model or part number to Marine Masters for a quotation.",
 
         primaryCta: "Request a Quote",
 
@@ -27,7 +27,7 @@ export const germany = {
 
     rfq: {
         title:
-            "Request Marine Spare Parts for Germany",
+            "Request Marine Spare Parts for the UK",
 
         description:
             "Send your part number, manufacturer, engine model, quantity and delivery location. Our team will review your requirement and provide a quotation.",
@@ -46,13 +46,13 @@ export const germany = {
     },
 
     overview: [
-        "Marine Masters supplies marine spare parts and ship machinery to ship owners, ship managers, shipyards, marine service companies and procurement teams sourcing equipment for vessels operating in Germany.",
+        "Marine Masters supplies marine spare parts and ship machinery to ship owners, ship managers, shipyards, marine service companies and procurement teams sourcing equipment for vessels operating in the United Kingdom.",
 
         "Our sourcing range covers marine engine spare parts, auxiliary engine components, turbocharger spare parts, marine pump components, separator spares, air compressor parts, fuel injection components, cylinder liners, piston rings, bearings, crankshafts and other critical engine and machinery components.",
 
         "For quotation requests, customers can provide the manufacturer, engine or machinery model, part number, required quantity and delivery location. This allows our team to identify the required component and prepare a commercial quotation.",
 
-        "Marine Masters supports planned maintenance, vessel repairs, dry-dock requirements and urgent spare-parts procurement with international sourcing and delivery from India to customers in Germany.",
+        "Marine Masters supports planned maintenance, vessel repairs, dry-dock requirements and urgent spare-parts procurement with international sourcing and delivery from India to customers in the UK.",
     ],
 
     commercialProducts: [
@@ -143,48 +143,51 @@ export const germany = {
         "Offshore Wind",
         "Ferry Operators",
         "Port Operations",
+        "Cruise & Passenger Vessels",
+        "Fishing Vessels",
+        "Marine Engineering",
     ],
 
     ports: [
         {
-            name: "Port of Hamburg",
+            name: "Port of London",
             description:
-                "Marine engine spare parts, ship machinery and technical components for vessels calling at Hamburg.",
+                "Marine engine spare parts, ship machinery and technical components for vessels operating through London and the River Thames.",
         },
         {
-            name: "Port of Bremerhaven",
+            name: "Port of Southampton",
             description:
-                "Ship spare parts and marine machinery sourcing for vessel maintenance and port requirements.",
+                "Ship spare parts and marine machinery sourcing for commercial vessels, passenger ships and port operations.",
         },
         {
-            name: "Port of Wilhelmshaven",
+            name: "Port of Felixstowe",
             description:
-                "Marine engine parts, machinery components and urgent spare-parts sourcing.",
+                "Marine engine parts, machinery components and spare-parts sourcing for container shipping and vessel operations.",
         },
         {
-            name: "Port of Kiel",
+            name: "Port of Liverpool",
             description:
-                "Marine spare parts and engine components for vessels and marine service operations.",
+                "Marine spare parts and engine components for vessels, ship repair and maritime service operations.",
         },
         {
-            name: "Port of Rostock",
+            name: "Port of Immingham",
             description:
-                "Marine machinery and ship spare parts sourcing for vessels operating in Northern Germany.",
+                "Marine machinery and ship spare parts sourcing for commercial shipping and industrial maritime requirements.",
         },
         {
-            name: "Port of Lübeck",
+            name: "Port of Tyne",
             description:
-                "Marine engine parts and ship machinery sourcing for vessel maintenance requirements.",
+                "Marine engine components, ship machinery and spare parts for vessel maintenance and marine engineering operations.",
         },
         {
-            name: "Port of Cuxhaven",
+            name: "Port of Dover",
             description:
-                "Marine spare parts and machinery sourcing for commercial and offshore vessel requirements.",
+                "Marine spare parts and machinery sourcing for ferry, commercial and passenger vessel requirements.",
         },
         {
-            name: "Port of Emden",
+            name: "Port of Hull",
             description:
-                "Marine engine components, machinery parts and ship spares for vessel operations.",
+                "Marine engine parts and ship machinery sourcing for vessels, shipyards and offshore-related operations.",
         },
     ],
 
@@ -304,7 +307,7 @@ export const germany = {
         "Emergency spare-parts delivery",
         "Dry-dock spare-parts packages",
         "Export documentation support",
-        "Delivery to German ports and locations",
+        "Delivery to UK ports and locations",
     ],
 
     commercialUseCases: [
@@ -334,13 +337,13 @@ export const germany = {
                 "Support recurring spare-parts requirements for vessel fleets and marine operators.",
         },
     ],
-    
+
     faqs: [
         {
             question:
-                "Do you supply marine spare parts to Germany?",
+                "Do you supply marine spare parts to the UK?",
             answer:
-                "Yes. Marine Masters supplies marine spare parts, marine engine components, ship machinery and related marine equipment to customers in Germany.",
+                "Yes. Marine Masters supplies marine spare parts, marine engine components, ship machinery and related marine equipment to customers in the United Kingdom.",
         },
         {
             question:
@@ -350,7 +353,7 @@ export const germany = {
         },
         {
             question:
-                "What marine engine spare parts can you supply to Germany?",
+                "What marine engine spare parts can you supply to the UK?",
             answer:
                 "Our sourcing range includes engine components such as crankshafts, cylinder liners, piston rings, bearings, fuel injection components, exhaust valve parts and engine overhaul components, subject to availability and specification.",
         },
@@ -362,7 +365,7 @@ export const germany = {
         },
         {
             question:
-                "Can you deliver marine spare parts to German ports?",
+                "Can you deliver marine spare parts to UK ports?",
             answer:
                 "Marine Masters supports international logistics and can arrange delivery according to the customer's required destination and shipment requirements.",
         },
@@ -378,7 +381,7 @@ export const germany = {
 
     cta: {
         heading:
-            "Need Marine Spare Parts in Germany?",
+            "Need Marine Spare Parts in the UK?",
 
         description:
             "Send your marine engine, ship machinery or spare-parts requirement to Marine Masters. Provide the part number, manufacturer, model and delivery location and request a quotation.",

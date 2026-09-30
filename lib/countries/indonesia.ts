@@ -8,27 +8,160 @@ export const indonesia = {
     flag: "🇮🇩",
 
     metaTitle:
-        "Marine Spare Parts Supplier in Indonesia | Ship Spare Parts & Marine Engine Parts",
+        "Marine Spare Parts Supplier in Indonesia | Ship Engine & Machinery Parts",
 
     metaDescription:
-        "Marine Masters supplies marine spare parts, ship spare parts, marine engine spare parts, ship machinery, OEM marine components, and genuine spare parts to ship owners, shipyards, marine service companies, and fleet operators throughout Indonesia.",
+        "Marine Masters supplies marine spare parts, marine engine parts, ship machinery, turbocharger parts, pump spares and OEM marine components to vessels, shipyards and marine service companies across Indonesia.",
 
     hero: {
         title:
             "Marine Spare Parts Supplier in Indonesia",
 
         description:
-            "Marine Masters is a trusted marine spare parts supplier supporting ship owners, ship management companies, shipyards, offshore operators, and marine service providers across Indonesia with marine engine spare parts, ship machinery, OEM marine components, and worldwide ship spares delivery.",
+            "Source marine engine spare parts, ship machinery, turbocharger components, pump spares and other marine equipment for vessels operating in Indonesia. Send your manufacturer, model or part number to Marine Masters for a quotation.",
+
+        primaryCta: "Request a Quote",
+
+        secondaryCta: "Browse Marine Spare Parts",
+    },
+
+    rfq: {
+        title:
+            "Request Marine Spare Parts for Indonesia",
+
+        description:
+            "Send your part number, manufacturer, engine model, quantity and delivery location. Our team will review your requirement and provide a quotation.",
+
+        fields: [
+            "Manufacturer / Brand",
+            "Engine / Machinery Model",
+            "Part Number",
+            "Quantity",
+            "Delivery Port / Location",
+            "Photo or Drawing",
+        ],
+
+        button: "Send RFQ",
     },
 
     overview: [
-        "Indonesia is one of the world's largest maritime nations and the largest archipelagic country, consisting of more than 17,000 islands connected by an extensive shipping network. Its strategic location between the Indian and Pacific Oceans places Indonesia along some of the world's busiest international shipping routes, making reliable access to marine spare parts and ship machinery essential for commercial vessel operations. :contentReference[oaicite:0]{index=0}",
+        "Marine Masters supplies marine spare parts and ship machinery to ship owners, ship managers, shipyards, marine service companies and procurement teams sourcing equipment for vessels operating in Indonesia.",
 
-        "Marine Masters supplies marine spare parts, ship spare parts, marine engine spare parts, auxiliary engine spare parts, and ship machinery to customers throughout Indonesia. We support ship owners, fleet operators, ship management companies, shipyards, offshore contractors, and marine service providers with dependable sourcing solutions for planned maintenance, emergency repairs, dry docking projects, and vessel overhauls.",
+        "Our sourcing range covers marine engine spare parts, auxiliary engine components, turbocharger spare parts, marine pump components, oil purifier spares, air compressor parts, fuel injection components, cylinder liners, piston rings, bearings, crankshafts and other critical engine and machinery components.",
 
-        "Our product portfolio includes genuine marine spare parts, OEM marine components, compatible replacement parts, and reconditioned equipment for leading marine engine and machinery manufacturers. Whether you require marine pump spare parts, turbocharger components, marine purifier spares, marine air compressor spare parts, or complete engine overhaul kits, our team works closely with customers to source the right components efficiently.",
+        "For quotation requests, customers can provide the manufacturer, engine or machinery model, part number, required quantity and delivery location. This allows our team to identify the required component and prepare a commercial quotation.",
 
-        "With worldwide logistics support and experience supplying commercial vessels operating throughout Southeast Asia, Marine Masters helps Indonesian customers reduce procurement delays while maintaining reliable vessel operations through competitive quotations, technical assistance, and responsive customer support.",
+        "Marine Masters supports planned maintenance, vessel repairs, dry-dock requirements and urgent spare-parts procurement with international sourcing and delivery from India to customers and vessels operating in Indonesia.",
+    ],
+
+    commercialProducts: [
+        {
+            name: "Marine Engine Spare Parts",
+
+            description:
+                "Main and auxiliary engine components for commercial vessel maintenance, repair and overhaul requirements.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Turbocharger Spare Parts",
+
+            description:
+                "Turbocharger components and replacement parts for marine diesel engine applications.",
+
+            href: "/categories/machinery/turbocharger",
+        },
+
+        {
+            name: "Marine Pump Spare Parts",
+
+            description:
+                "Pump components and spare parts for marine and shipboard pumping systems.",
+
+            href: "/categories/machinery/pumps",
+        },
+
+        {
+            name: "Marine Oil Purifier Spare Parts",
+
+            description:
+                "Marine oil purifier equipment and spare parts for fuel and lubricating oil purification systems.",
+
+            href: "/categories/machinery/oil-purifier",
+        },
+
+        {
+            name: "Marine Air Compressor Spare Parts",
+
+            description:
+                "Components and spare parts for marine air compressor systems used on commercial vessels.",
+
+            href: "/categories/machinery/air-compressors",
+        },
+
+        {
+            name: "Marine Fuel Injection Parts",
+
+            description:
+                "Fuel injection components including nozzles and related marine diesel engine parts.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Crankshafts",
+
+            description:
+                "Crankshaft sourcing for marine diesel engines and major engine overhaul requirements.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Cylinder Liners",
+
+            description:
+                "Cylinder liners and related components for marine diesel engine maintenance and overhaul.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Piston Rings",
+
+            description:
+                "Piston rings and related components for marine engine maintenance and repair requirements.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Engine Bearings",
+
+            description:
+                "Engine bearing components for marine diesel engine maintenance and overhaul applications.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Exhaust Valve Parts",
+
+            description:
+                "Exhaust valve components and related marine engine spare parts for maintenance and overhaul.",
+
+            href: "/categories/engine-parts",
+        },
+
+        {
+            name: "Marine Engine Overhaul Kits",
+
+            description:
+                "Engine overhaul components and kits for scheduled maintenance and major marine engine work.",
+
+            href: "/categories/engine-parts",
+        },
     ],
 
     industries: [
@@ -36,78 +169,121 @@ export const indonesia = {
         "Container Shipping",
         "Bulk Carriers",
         "Tankers",
-        "Offshore Oil & Gas",
+        "Ship Management",
         "Shipyards",
         "Ship Repair & Dry Dock",
         "Marine Service Companies",
-        "Port Operators",
-        "Fishing Fleets",
-        "Government & Naval Support",
+        "Offshore Operations",
+        "Offshore Support",
+        "Ferry Operators",
+        "Port Operations",
+        "Fishing & Work Vessels",
     ],
 
     ports: [
-        "Port of Tanjung Priok (Jakarta)",
-        "Port of Tanjung Perak (Surabaya)",
-        "Port of Belawan (Medan)",
-        "Port of Makassar",
-        "Batam",
-        "Balikpapan",
-        "Semarang",
-        "Bitung",
-    ],
+        {
+            name: "Port of Tanjung Priok",
 
-    products: [
-        "Marine Spare Parts",
-        "Ship Spare Parts",
-        "Marine Engine Spare Parts",
-        "Main Engine Spare Parts",
-        "Auxiliary Engine Spare Parts",
-        "Ship Machinery",
-        "Marine Pumps",
-        "Marine Pump Spare Parts",
-        "Turbocharger Spare Parts",
-        "Marine Purifier Spares",
-        "Marine Air Compressor Spare Parts",
-        "Heat Exchangers",
-        "Fuel Injection Nozzles",
-        "Marine Cylinder Liners",
-        "Marine Piston Rings",
-        "Marine Engine Bearings",
-        "Exhaust Valve Spindles",
-        "Marine Engine Overhaul Kits",
+            description:
+                "Marine engine spare parts, ship machinery and technical components for vessels calling at Jakarta's main commercial port.",
+        },
+
+        {
+            name: "Port of Tanjung Perak",
+
+            description:
+                "Ship spare parts and marine machinery sourcing for vessels operating through Surabaya and East Java.",
+        },
+
+        {
+            name: "Port of Belawan",
+
+            description:
+                "Marine engine parts, machinery components and urgent spare-parts sourcing for vessels operating in North Sumatra.",
+        },
+
+        {
+            name: "Port of Makassar",
+
+            description:
+                "Marine spare parts and engine components for vessels and marine service operations in eastern Indonesia.",
+        },
+
+        {
+            name: "Port of Bitung",
+
+            description:
+                "Marine machinery and ship spare parts sourcing for vessels operating in North Sulawesi and eastern Indonesia.",
+        },
+
+        {
+            name: "Port of Batam",
+
+            description:
+                "Marine engine parts and ship machinery sourcing for shipyards, vessel operators and marine service companies.",
+        },
+
+        {
+            name: "Port of Bintulu",
+
+            description:
+                "Marine spare-parts sourcing and machinery support for vessels operating around the wider regional shipping network.",
+        },
+
+        {
+            name: "Port of Semarang",
+
+            description:
+                "Marine engine components, machinery parts and ship spares for commercial vessel operations in Central Java.",
+        },
     ],
 
     engineBrands: [
         {
             name: "MAN B&W 2-Stroke",
+
             href: "/categories/engine-parts/man-bw-2-stroke",
         },
+
         {
             name: "MAN B&W 4-Stroke",
+
             href: "/categories/engine-parts/man-bw-4-stroke",
         },
+
         {
             name: "Wärtsilä",
+
             href: "/categories/engine-parts/wartsila",
         },
+
         {
             name: "Sulzer",
+
             href: "/categories/engine-parts/sulzer",
         },
+
         {
             name: "Yanmar",
+
             href: "/categories/engine-parts/yanmar",
         },
+
         {
             name: "Mitsubishi",
+
             href: "/categories/engine-parts/mitsubishi",
         },
+
         {
             name: "Daihatsu",
+
             href: "/categories/engine-parts/daihatsu",
         },
+
         {
             name: "Bergen",
+
             href: "/categories/engine-parts/bergen",
         },
     ],
@@ -115,117 +291,214 @@ export const indonesia = {
     machineryBrands: [
         {
             name: "ABB",
+
             href: "/categories/machinery/turbocharger/abb",
         },
+
         {
             name: "Mitsubishi MET",
+
             href: "/categories/machinery/turbocharger/mitsubishi-met",
         },
+
         {
             name: "IHI",
+
             href: "/categories/machinery/turbocharger/ihi",
         },
+
         {
             name: "HOLSET",
+
             href: "/categories/machinery/turbocharger/holset",
         },
+
         {
             name: "KBB",
+
             href: "/categories/machinery/turbocharger/kbb",
         },
+
         {
             name: "Napier",
+
             href: "/categories/machinery/turbocharger/napier",
         },
+
         {
             name: "Allweiler",
+
             href: "/categories/machinery/pumps/allweiler",
         },
+
         {
             name: "DESMI",
+
             href: "/categories/machinery/pumps/desmi",
         },
+
         {
             name: "Grundfos",
+
             href: "/categories/machinery/pumps/grundfos",
         },
+
         {
             name: "IMO",
+
             href: "/categories/machinery/pumps/imo",
         },
+
         {
             name: "KSB",
+
             href: "/categories/machinery/pumps/ksb",
         },
+
         {
             name: "Alfa Laval",
+
             href: "/categories/machinery/pumps/alfa-laval-pumps",
         },
+
         {
             name: "Hamworthy",
+
             href: "/categories/machinery/pumps/hamworthy-pumps",
         },
+
         {
             name: "Shinko",
+
             href: "/categories/machinery/pumps/shinko",
         },
+
         {
             name: "Sulzer Pumps",
+
             href: "/categories/machinery/pumps/sulzer",
         },
     ],
 
     whyChooseUs: [
-        "Worldwide ship spares delivery",
-        "Marine engine spare parts supplier",
-        "Ship machinery sourcing",
-        "OEM and genuine marine spare parts",
-        "Support for planned maintenance and emergency requirements",
-        "Competitive quotations",
-        "Fast RFQ response",
-        "Technical identification assistance",
+        "Marine spare parts sourcing from India",
+
+        "Marine engine and machinery parts",
+
+        "Manufacturer and part-number identification",
+
+        "OEM and genuine marine components where available",
+
+        "Support for planned maintenance and dry-dock requirements",
+
+        "Emergency spare-parts sourcing",
+
+        "Competitive RFQ-based quotations",
+
+        "Worldwide export logistics",
     ],
 
     logistics: [
-        "Worldwide air freight",
-        "Express courier delivery",
+        "Air freight",
+
+        "Express courier",
+
         "Sea freight",
-        "Emergency spare parts supply",
-        "Dry dock spare parts packages",
+
+        "Emergency spare-parts delivery",
+
+        "Dry-dock spare-parts packages",
+
         "Export documentation support",
+
+        "Delivery to Indonesian ports and locations",
+    ],
+
+    commercialUseCases: [
+        {
+            title: "Vessel Maintenance",
+
+            description:
+                "Source marine engine and machinery spare parts for scheduled vessel maintenance and repair requirements.",
+        },
+
+        {
+            title: "Dry Dock Requirements",
+
+            description:
+                "Request engine components, machinery parts and overhaul components for dry-dock projects.",
+        },
+
+        {
+            title: "Emergency Spare Parts",
+
+            description:
+                "Submit urgent marine spare-parts requirements with the vessel, port and required delivery location.",
+        },
+
+        {
+            title: "Shipyard Procurement",
+
+            description:
+                "Source marine engine parts and ship machinery for repair, refurbishment and shipyard projects.",
+        },
+
+        {
+            title: "Fleet Procurement",
+
+            description:
+                "Support recurring spare-parts requirements for vessel fleets, ship managers and marine operators.",
+        },
     ],
 
     faqs: [
         {
             question:
-                "Do you supply marine spare parts throughout Indonesia?",
+                "Do you supply marine spare parts to Indonesia?",
+
             answer:
-                "Yes. Marine Masters supplies marine spare parts, ship spare parts, marine engine spare parts, and ship machinery to customers across Indonesia, including major ports such as Jakarta, Surabaya, Batam, Belawan, Makassar, and Balikpapan."
+                "Yes. Marine Masters supplies marine spare parts, marine engine components, ship machinery and related marine equipment to customers and vessel operators in Indonesia.",
         },
+
         {
             question:
-                "Can you supply OEM and genuine marine spare parts?",
+                "Can I request a marine spare part by part number?",
+
             answer:
-                "Yes. Depending on your vessel's requirements, we can assist with genuine marine spare parts, OEM marine components, compatible replacement parts, and reconditioned equipment for leading marine engine and machinery brands."
+                "Yes. Send the manufacturer, part number, engine or machinery model, quantity and available photographs or drawings with your RFQ so the requirement can be reviewed.",
         },
+
         {
             question:
-                "Which marine industries do you support in Indonesia?",
+                "What marine engine spare parts can you supply to Indonesia?",
+
             answer:
-                "We support ship owners, ship management companies, commercial fleets, offshore operators, shipyards, marine service providers, fishing fleets, and procurement professionals throughout Indonesia."
+                "Our sourcing range includes engine components such as crankshafts, cylinder liners, piston rings, bearings, fuel injection components, exhaust valve parts and engine overhaul components, subject to availability and specification.",
         },
+
         {
             question:
-                "Do you provide emergency ship spare parts delivery?",
+                "Do you supply marine pump and turbocharger spare parts?",
+
             answer:
-                "Yes. We support urgent vessel maintenance by helping customers source emergency ship spare parts and coordinating worldwide logistics whenever possible."
+                "Yes. Marine Masters sources marine pump spare parts and turbocharger components from manufacturers and machinery categories covered by its marine spare-parts portfolio.",
         },
+
         {
             question:
-                "What information should I include when requesting a quotation?",
+                "Can you deliver marine spare parts to Indonesian ports?",
+
             answer:
-                "For the fastest quotation, provide the equipment manufacturer, model, serial number, part number, required quantity, photographs if available, and the required delivery location in Indonesia."
-        }
+                "Marine Masters supports international logistics and can arrange delivery according to the customer's required Indonesian port, destination and shipment requirements.",
+        },
+
+        {
+            question:
+                "What information should I provide for a quotation?",
+
+            answer:
+                "For a faster quotation, provide the manufacturer, engine or machinery model, serial number where available, part number, quantity, photographs or drawings and the required delivery location.",
+        },
     ],
 
     regions: allRegions,
@@ -235,9 +508,8 @@ export const indonesia = {
             "Need Marine Spare Parts in Indonesia?",
 
         description:
-            "Whether you're planning scheduled maintenance, a dry dock project, or require urgent vessel spare parts, our team is ready to help source marine engine spare parts, ship machinery, and OEM marine components with worldwide delivery.",
+            "Send your marine engine, ship machinery or spare-parts requirement to Marine Masters. Provide the part number, manufacturer, model and delivery location and request a quotation.",
 
-        button:
-            "Request a Quote",
+        button: "Request a Quote",
     },
 };

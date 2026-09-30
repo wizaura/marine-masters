@@ -14,11 +14,12 @@ import CountryPorts from "@/components/country/CountryPorts";
 import CountryProducts from "@/components/country/CountryProducts";
 import CountryBrands from "@/components/country/CountryBrands";
 import CountryCategories from "@/components/country/CountryCategories";
-import CountryLogistics from "@/components/country/CountryLogistics";
-import CountryWhyChoose from "@/components/country/CountryWhyChoose";
 import CountryFAQ from "@/components/country/CountryFAQ";
 import CountryCTA from "@/components/country/CountryCTA";
 import RegionCountries from "@/components/country/RegionCountries";
+import RegionLogistics from "@/components/country/RegionLogistics";
+import RegionWhyChoose from "@/components/country/RegionWhyChoose";
+import CountryRFQ from "@/components/country/CountryRFQ";
 
 export type RegionSlug = keyof typeof regions;
 
@@ -269,7 +270,7 @@ export default async function RegionPage({
             />
 
             <CountryProducts
-                products={data.products}
+                products={data.commercialProducts}
             />
 
             <CountryBrands
@@ -285,18 +286,21 @@ export default async function RegionPage({
                 countries={data.countries}
             />
 
-            <CountryLogistics
+            <RegionLogistics
                 country={data.name}
                 logistics={data.logistics}
             />
 
-            <CountryWhyChoose
+            <RegionWhyChoose
+                region={data.name}
                 points={data.whyChooseUs}
             />
 
             <CountryFAQ
                 faqs={data.faqs}
             />
+
+            <CountryRFQ country={data.name} />
 
             <CountryCTA
                 heading={data.cta.heading}

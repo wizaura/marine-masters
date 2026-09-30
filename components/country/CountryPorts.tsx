@@ -1,8 +1,8 @@
-import Link from "next/link";
+import type { CountryPort } from "@/lib/countries/types";
 
 type Props = {
     country: string;
-    ports: string[];
+    ports: CountryPort[];
 };
 
 export default function CountryPorts({
@@ -10,44 +10,132 @@ export default function CountryPorts({
     ports,
 }: Props) {
     return (
-        <section className="py-20 bg-neutral-50">
-            <div className="mx-auto max-w-7xl px-6">
+        <section className="bg-white py-20 sm:py-24">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                 <div className="max-w-4xl">
-                    <h2 className="text-4xl font-bold">
-                        Supporting Major Ports Across {country}
+                    <span
+                        className="
+                            text-sm
+                            font-semibold
+                            uppercase
+                            tracking-[0.16em]
+                            text-orange-500
+                        "
+                    >
+                        Port & Vessel Support
+                    </span>
+
+                    <h2
+                        className="
+                            mt-3
+                            text-3xl
+                            font-bold
+                            tracking-tight
+                            text-neutral-950
+                            sm:text-4xl
+                        "
+                    >
+                        Marine Spare Parts for Major Ports in {country}
                     </h2>
 
-                    <p className="mt-5 text-lg leading-8 text-neutral-600">
+                    <p
+                        className="
+                            mt-5
+                            text-base
+                            leading-8
+                            text-neutral-600
+                            sm:text-lg
+                        "
+                    >
                         Marine Masters supports vessel operators, ship owners,
                         shipyards, marine service providers, and procurement
-                        teams operating through major commercial ports across{" "}
-                        {country}. Whether your vessel requires planned
-                        maintenance, dry dock support, or urgent replacement
-                        components, we help source marine spare parts and ship
-                        machinery with worldwide logistics support.
+                        teams sourcing spare parts for vessels operating through
+                        major ports across {country}.
                     </p>
                 </div>
 
-                <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                <div
+                    className="
+                        mt-12
+                        grid
+                        gap-5
+                        sm:grid-cols-2
+                        lg:grid-cols-4
+                    "
+                >
                     {ports.map((port) => (
                         <div
-                            key={port}
-                            className="rounded-xl border border-gray-300 bg-white p-6"
+                            key={port.name}
+                            className="
+                                rounded-xl
+                                border
+                                border-neutral-200
+                                bg-neutral-50
+                                p-6
+                                transition
+                                duration-300
+                                hover:-translate-y-1
+                                hover:border-orange-200
+                                hover:bg-white
+                                hover:shadow-md
+                            "
                         >
-                            <h3 className="font-semibold text-lg">
-                                {port}
+                            <h3 className="text-lg font-semibold text-neutral-950">
+                                {port.name}
                             </h3>
+
+                            <p className="mt-3 text-sm leading-6 text-neutral-600">
+                                {port.description}
+                            </p>
                         </div>
                     ))}
                 </div>
 
-                <p className="mt-10 text-neutral-600 leading-8">
-                    If your vessel is calling at one of these ports, our team
-                    can assist with sourcing marine engine spare parts, ship
-                    spare parts, pumps, turbochargers, compressors, purifiers,
-                    heat exchangers, and other critical ship machinery.
-                </p>
+                <div
+                    className="
+                        mt-10
+                        rounded-2xl
+                        border
+                        border-orange-100
+                        bg-orange-50
+                        p-6
+                        sm:p-8
+                    "
+                >
+                    <h3 className="text-xl font-bold text-neutral-950">
+                        Need Spare Parts for a Vessel Calling at a {country} Port?
+                    </h3>
+
+                    <p className="mt-3 max-w-4xl leading-7 text-neutral-700">
+                        Send your manufacturer, engine or machinery model,
+                        part number, required quantity, and delivery location.
+                        Marine Masters can assist with sourcing marine engine
+                        spare parts, ship machinery components, pumps,
+                        turbochargers, compressors, oil purifier parts,
+                        heat exchangers, and other marine equipment.
+                    </p>
+
+                    <a
+                        href="#rfq"
+                        className="
+                            mt-6
+                            inline-flex
+                            items-center
+                            justify-center
+                            rounded-lg
+                            bg-orange-500
+                            px-6
+                            py-3
+                            font-semibold
+                            text-white
+                            transition
+                            hover:bg-orange-400
+                        "
+                    >
+                        Request a Quote
+                    </a>
+                </div>
 
             </div>
         </section>

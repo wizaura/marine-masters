@@ -19,6 +19,7 @@ import CountryWhyChoose from "@/components/country/CountryWhyChoose";
 import CountryFAQ from "@/components/country/CountryFAQ";
 import CountryCTA from "@/components/country/CountryCTA";
 import CountryRegions from "@/components/country/CountryRegions";
+import CountryRFQ from "@/components/country/CountryRFQ";
 
 export type CountrySlug = keyof typeof countries;
 
@@ -249,7 +250,7 @@ export default async function CountryPage({
             />
 
             <CountryProducts
-                products={data.products}
+                products={data.commercialProducts}
             />
 
             <CountryBrands
@@ -278,6 +279,8 @@ export default async function CountryPage({
             <CountryFAQ
                 faqs={data.faqs}
             />
+
+            <CountryRFQ country={data.name} />
 
             <CountryCTA
                 heading={data.cta.heading}
