@@ -191,7 +191,7 @@ export default function BlogList({
 
                                                 {/* Meta */}
 
-                                                <div
+                                                {/* <div
                                                     className="
                                                         mt-6
                                                         flex
@@ -247,7 +247,7 @@ export default function BlogList({
                                                         />
                                                         {blog.readingTime} min
                                                     </div>
-                                                </div>
+                                                </div> */}
 
                                                 {/* Title */}
 

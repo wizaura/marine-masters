@@ -75,7 +75,7 @@ export default function BlogHero({
                                 </span>
                             )}
 
-                            <span
+                            {/* <span
                                 className="
                                     flex
                                     items-center
@@ -101,17 +101,17 @@ export default function BlogHero({
                                         year: "numeric",
                                     }
                                 )}
-                            </span>
+                            </span> */}
 
                         </div>
 
                         <h1
                             className="
-                                text-5xl
+                                text-4xl
                                 font-bold
                                 leading-[0.95]
                                 text-white
-                                lg:text-7xl
+                                lg:text-6xl
                             "
                         >
                             {blog.title}
@@ -121,10 +121,11 @@ export default function BlogHero({
                             <p
                                 className="
                                     mt-8
-                                    max-w-3xl
-                                    text-xl
+                                    max-w-5xl
+                                    text-md
                                     leading-relaxed
                                     text-white/85
+                                    sm:text-lg
                                 "
                             >
                                 {blog.excerpt}

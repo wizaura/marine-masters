@@ -191,7 +191,7 @@ export default function HomeBlogsSection({
 
                                             {/* Meta */}
 
-                                            <div
+                                            {/* <div
                                                 className="
                                                     mt-6
                                                     flex
@@ -252,7 +252,7 @@ export default function HomeBlogsSection({
                                                         min
                                                     </span>
                                                 </div>
-                                            </div>
+                                            </div> */}
 
                                             {/* Title */}
 
