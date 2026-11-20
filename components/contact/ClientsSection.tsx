@@ -185,6 +185,7 @@ export default function ContactRFQSection() {
                 "RFQ submission failed:",
                 err
             );
+            
 
             setError(
                 "Something went wrong. Please try again."
